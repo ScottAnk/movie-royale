@@ -5,6 +5,7 @@ export default function CreateRoom({ roomCode, setRoomCode }) {
   function createRoom() {
     console.log('Room Created')
     navigate('/room')
+    //
   }
   return (
     <div className="EnterRoom">
