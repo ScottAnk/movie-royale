@@ -1,20 +1,25 @@
 import { useState } from 'react'
 import SignUpForm from '../../components/SignUpForm/SignUpForm'
 import LoginForm from '../../components/LoginForm/LoginForm'
+import './AuthPage.css'
 
 export default function AuthPage({ setUser }) {
-  const [showSignUp, setShowSignUp] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false);
+
+	function handleShowSignUp() {
+		setShowSignUp(!showSignUp)
+	}
+  
   return (
     <main>
-      {/* if showSignUp is false, set it to true and vice versa */}
-      <button onClick={() => setShowSignUp(!showSignUp)}>
-        {showSignUp ? 'Log In' : 'Sign Up'}
-      </button>
-      {showSignUp ? (
-        <SignUpForm setUser={setUser} />
-      ) : (
-        <LoginForm setUser={setUser} />
-      )}
+      <h1>Movie Royale</h1>
+      <div className="AuthFormContainer">
+        {showSignUp ? (
+          <SignUpForm setUser={setUser} showSignUp={showSignUp} handleShowSignUp={handleShowSignUp} />
+        ) : (
+          <LoginForm setUser={setUser} showSignUp={showSignUp} handleShowSignUp={handleShowSignUp}/>
+        )}
+      </div>
     </main>
-  )
+  );
 }

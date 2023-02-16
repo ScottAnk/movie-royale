@@ -1,15 +1,28 @@
-.AuthPage {
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--white);
-    border-radius: 2vmin;
+.AuthFormContainer {
+  padding: 10vmin 15vmin 0vmin 15vmin;
+  background-color: #ffffff;
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  margin-bottom: 10px;
 }
 
-.AuthPage h3 {
-    margin-top: 4vmin;
-    text-align: center;
-    color: var(--text-light);
-    cursor: pointer;
+.AuthCardContainer {
+  padding: 8vmin;
+  background-color: #d3c1ae;
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+}
+
+.AuthHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.LoginSignUp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
