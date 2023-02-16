@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router-dom'
+
 export default function CreateRoom({ roomCode, setRoomCode }) {
+  const navigate = useNavigate()
   function createRoom() {
     console.log('Room Created')
+    navigate('/room')
   }
   return (
     <div className="EnterRoom">

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../AuthPage/AuthPage'
 import NavBar from '../../components/NavBar/NavBar'
 import EnterRoom from '../../components/EnterRoom/EnterRoom'
-import CreateRoom from '../../components/CreateRoom/CreateRoom'
+import CreateRoom from '../CreateRoom/CreateRoom'
 import RoomPage from '../RoomPage/RoomPage'
+import VotingRoom from '../VotingRoom/VotingRoom'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -15,11 +16,24 @@ export default function App() {
     <main className="App">
       {user ? (
         <>
-          <Routes>
-            <Route path="/room" element={<RoomPage />} />
-          </Routes>
           <NavBar user={user} />
-          <CreateRoom />
+          <Routes>
+            {/* once a room is created, we want to direct to /room */}
+            <Route path="/room" element={<RoomPage />} />
+            <Route path="/room/create" element={<CreateRoom />} />
+            <Route path="/vote" element={<VotingRoom />} />
+            {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
+            <Route
+              path="/*"
+              element={
+                roomCode === '' ? (
+                  <Navigate to="/room/create" />
+                ) : (
+                  <Navigate to="/room" />
+                )
+              }
+            />
+          </Routes>
         </>
       ) : (
         <>
