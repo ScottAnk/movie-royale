@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../AuthPage/AuthPage'
 import NavBar from '../../components/NavBar/NavBar'
 import EnterRoom from '../../components/EnterRoom/EnterRoom'
+import CreateRoom from '../../components/CreateRoom/CreateRoom'
+import RoomPage from '../RoomPage/RoomPage'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -13,8 +15,11 @@ export default function App() {
     <main className="App">
       {user ? (
         <>
+          <Routes>
+            <Route path="/room" element={<RoomPage />} />
+          </Routes>
           <NavBar user={user} />
-          <Routes></Routes>
+          <CreateRoom />
         </>
       ) : (
         <>

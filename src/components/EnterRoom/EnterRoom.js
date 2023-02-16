@@ -3,6 +3,8 @@ export default function EnterRoom({ roomCode, setRoomCode }) {
     event.preventDefault()
     console.log('Moving on to list of movies page (room) ')
     console.log(roomCode)
+    // possible <Navigate /> once roomcode is entered
+    // https://reactrouter.com/en/main/components/navigate
   }
 
   function handleChange(event) {
@@ -11,7 +13,7 @@ export default function EnterRoom({ roomCode, setRoomCode }) {
   }
   return (
     <div className="EnterRoom">
-      <h2>Let's Get Watching</h2>
+      <h2>Let's Get Watchin'</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Enter Room Code:{' '}
