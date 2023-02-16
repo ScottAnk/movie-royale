@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   padding: 3vmin;
-  background-color: #D3C1AE;
-  border: .1vmin solid var(--tan-3);
+  background-color: #d3c1ae;
+  border: 0.1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
