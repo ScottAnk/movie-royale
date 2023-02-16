@@ -1,4 +1,9 @@
+import { useState } from 'react'
+import './EnterRoom.css'
+
 export default function EnterRoom({ roomCode, setRoomCode }) {
+  const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
+
   function handleSubmit(event) {
     event.preventDefault()
     console.log('Moving on to list of movies page (room) ')
@@ -11,22 +16,36 @@ export default function EnterRoom({ roomCode, setRoomCode }) {
     const newRoomCode = event.target.value
     setRoomCode(newRoomCode)
   }
+
   return (
     <div className="EnterRoom">
-      <h2>Let's Get Watchin'</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Enter Room Code:{' '}
-          <input
-            type="text"
-            value={roomCode}
-            onChange={handleChange}
-            placeholder="XXXXXX"
-            name="roomCode"
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="CardContainer">
+        <h2>Let's Get Watchin'</h2>
+        <button
+          onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
+          style={{ display: showRoomCodeForm ? 'none' : 'inline-block' }}
+        >
+          Already Have a Room Code?
+        </button>
+        <div>
+          {showRoomCodeForm ? (
+            <form autoComplete="off" onSubmit={handleSubmit}>
+              <label>Enter Room Code: </label>
+              <input
+                type="text"
+                value={roomCode}
+                onChange={handleChange}
+                placeholder="XXXXXX"
+                name="roomCode"
+                required
+              />
+              <button type="submit">Submit Room Code</button>
+            </form>
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }

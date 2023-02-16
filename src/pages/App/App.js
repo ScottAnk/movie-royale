@@ -37,8 +37,8 @@ export default function App() {
         </>
       ) : (
         <>
-          <EnterRoom roomCode={roomCode} setRoomCode={setRoomCode} />
           <AuthPage setUser={setUser} />
+          <EnterRoom roomCode={roomCode} setRoomCode={setRoomCode} />
         </>
       )}
     </main>
