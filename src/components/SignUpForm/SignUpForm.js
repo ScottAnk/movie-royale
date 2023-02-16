@@ -2,47 +2,47 @@ import { Component } from 'react'
 import { signUp } from '../../utilities/users-service'
 
 export default class SignUpForm extends Component {
-	state = {
-		name: '',
-		email: '',
-		password: '',
-		confirm: '',
-		error: '',
-	}
+  state = {
+    name: '',
+    email: '',
+    password: '',
+    confirm: '',
+    error: '',
+  }
 
-	handleSubmit = async (evt) => {
-		evt.preventDefault()
-		try {
-			const formData = { ...this.state }
-			delete formData.confirm
-			delete formData.error
-			// The promise returned by the signUp service method
-			// will resolve to the user object included in the
-			// payload of the JSON Web Token (JWT)
-			const user = await signUp(formData)
-			// Update user state with user
-			this.props.setUser(user)
-		} catch {
-			// Invalid signup
-			this.setState({
-				error: 'Sign Up Failed - Try Again',
-			})
-		}
-	}
+  handleSubmit = async (evt) => {
+    evt.preventDefault()
+    try {
+      const formData = { ...this.state }
+      delete formData.confirm
+      delete formData.error
+      // The promise returned by the signUp service method
+      // will resolve to the user object included in the
+      // payload of the JSON Web Token (JWT)
+      const user = await signUp(formData)
+      // Update user state with user
+      this.props.setUser(user)
+    } catch {
+      // Invalid signup
+      this.setState({
+        error: 'Sign Up Failed - Try Again',
+      })
+    }
+  }
 
-	handleChange = (evt) => {
-		this.setState({
-			[evt.target.name]: evt.target.value,
-			error: '',
-		})
-	}
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+      error: '',
+    })
+  }
 
   render() {
-    const disable = this.state.password !== this.state.confirm;
+    const disable = this.state.password !== this.state.confirm
     return (
       <div>
         <div className="AuthCardContainer">
-				<h2 className="AuthHeader">Let's Sign Ya Up!</h2>
+          <h2 className="AuthHeader">Let's Sign Ya Up!</h2>
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label>Name</label>
             <input
@@ -81,16 +81,21 @@ export default class SignUpForm extends Component {
             </button>
           </form>
           <div className="LoginSignUp">
-            <h5 style={{
-					marginTop: "15px",
-					marginBottom: "5px"}}>Already have an account?</h5>
+            <h5
+              style={{
+                marginTop: '15px',
+                marginBottom: '5px',
+              }}
+            >
+              Already have an account?
+            </h5>
             <button onClick={this.props.handleShowSignUp}>
-              {this.props.showSignUp ? "Log In" : "Sign Up"}
+              {this.props.showSignUp ? 'Log In' : 'Sign Up'}
             </button>
           </div>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
       </div>
-    );
+    )
   }
 }

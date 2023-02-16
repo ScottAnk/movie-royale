@@ -30,7 +30,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
   return (
     <div>
       <div className="AuthCardContainer">
-				<h2 className="AuthHeader">Let's Get'cha Logged In</h2>
+        <h2 className="AuthHeader">Let's Get'cha Logged In</h2>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Email</label>
           <input
@@ -50,16 +50,21 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           />
           <button type="submit">LOG IN</button>
         </form>
-				<div className="LoginSignUp">
-				<h5 style={{
-					marginTop: "15px",
-					marginBottom: "5px"}}>Don't have an account yet?</h5>
-      <button onClick={handleShowSignUp}>
-        {showSignUp ? "Log In" : "Sign Up"}
-      </button>
-			</div>
+        <div className="LoginSignUp">
+          <h5
+            style={{
+              marginTop: '15px',
+              marginBottom: '5px',
+            }}
+          >
+            Don't have an account yet?
+          </h5>
+          <button onClick={handleShowSignUp}>
+            {showSignUp ? 'Log In' : 'Sign Up'}
+          </button>
+        </div>
       </div>
       <p className="error-message">&nbsp;{error}</p>
     </div>
-  );
+  )
 }
