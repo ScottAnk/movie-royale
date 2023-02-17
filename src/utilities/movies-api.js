@@ -27,6 +27,7 @@ export function getMovies() {
     .catch(function (error) {
     console.error(error);
   });
+
 }
 
 // export function getPosters() {
