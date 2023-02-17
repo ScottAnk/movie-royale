@@ -18,11 +18,13 @@ try {
     }
 }
 
+async function vote(req, res, next) {}
 
-
-
+async function recommend(req, res, next) {}
 
 module.exports = {
-    createRoom,
-    joinRoom
+  createRoom,
+  joinRoom,
+  vote,
+  recommend,
 }

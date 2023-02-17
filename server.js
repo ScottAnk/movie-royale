@@ -22,6 +22,7 @@ app.use(require('./config/checkToken'))
 
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'))
+app.use('/api/rooms', require('./routes/api/rooms'))
 // Protect the api routes below from anon users
 const ensureLoggedIn = require('./config/ensureLoggedIn')
 

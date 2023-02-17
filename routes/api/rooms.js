@@ -1,11 +1,19 @@
 const express = require('express')
-router = express.Router()
+const router = express.Router()
+
 const roomCtrl = require('../../controllers/api/rooms')
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
-const router = require('./users')
 
-router.post('/room', ensureLoggedIn, roomCtrl.createRoom)
+// Create room for logged in user
+router.post('/', ensureLoggedIn, roomCtrl.createRoom)
 
-router.get('/room/:roomCode', roomCtrl.joinRoom)
+// Get room data for pre-defined room
+router.get('/:roomCode', roomCtrl.joinRoom)
 
-router.post('/room/:roomId/vote', ensureLoggedIn, roomCtrl.)
+// Cast or update vote on a recommended movie
+router.post('/:roomId/vote', ensureLoggedIn, roomCtrl.vote)
+
+// Add a movie to room's recommended movies
+router.post('/:roomId/recommend', ensureLoggedIn, roomCtrl.recommend)
+
+module.exports = router
