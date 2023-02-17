@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import { getUser } from '../../utilities/users-service'
@@ -8,10 +8,22 @@ import EnterRoom from '../../components/EnterRoom/EnterRoom'
 import CreateRoom from '../CreateRoom/CreateRoom'
 import RoomPage from '../RoomPage/RoomPage'
 import VotingRoom from '../VotingRoom/VotingRoom'
+//import * as moviesAPI from '../../utilities/movies-api'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
-  const [roomCode, setRoomCode] = useState('')
+  const [room, setRoom] = useState({})
+  const [movies, setMovies] = useState([])
+  const [selectedMovies, setSelectedMovies] = useState([])
+
+  // useEffect(function () {
+  //   async function getMovies() {
+  //     // await moviesAPI.getMovies()
+  //     // setMovies(movies)
+  //   }
+  //   getMovies()
+  // }, [])
+
   return (
     <main className="App">
       {user ? (
@@ -19,14 +31,25 @@ export default function App() {
           <NavBar user={user} />
           <Routes>
             {/* once a room is created, we want to direct to /room */}
-            <Route path="/room" element={<RoomPage user={user} />} />
-            <Route path="/room/create" element={<CreateRoom />} />
-            <Route path="/vote" element={<VotingRoom />} />
+            <Route
+              path="/room"
+              element={<RoomPage user={user} room={room} movies={movies} />}
+            />
+            <Route
+              path="/room/create"
+              element={<CreateRoom room={room} setRoom={setRoom} />}
+            />
+            <Route
+              path="/vote"
+              element={
+                <VotingRoom movies={movies} selectedMovies={selectedMovies} />
+              }
+            />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route
               path="/*"
               element={
-                roomCode === '' ? (
+                room === '' ? (
                   <Navigate to="/room/create" />
                 ) : (
                   <Navigate to="/room" />
@@ -38,7 +61,12 @@ export default function App() {
       ) : (
         <>
           <AuthPage setUser={setUser} />
-          <EnterRoom roomCode={roomCode} setRoomCode={setRoomCode} />
+          <EnterRoom
+            user={user}
+            setUser={setUser}
+            room={room}
+            setRoom={setRoom}
+          />
         </>
       )}
     </main>
