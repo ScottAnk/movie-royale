@@ -16,7 +16,8 @@ async function createRoom(req, res, next) {
 async function joinRoom(req, res) {
   try {
     // logOut()
-    const room = await Room.findOne({ roomCode: req.body.roomCode })
+    const room = await Room.findOne({ roomCode: req.params.roomCode })
+    res.json(room)
     if (!room) throw new Error()
   } catch {
     const message = document.createElement('div')

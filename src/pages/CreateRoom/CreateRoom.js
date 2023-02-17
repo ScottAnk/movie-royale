@@ -11,6 +11,7 @@ export default function CreateRoom({ room, setRoom }) {
       // grab our room
       const newRoom = await roomsAPI.getRoom()
       // set the room
+
       setRoom(newRoom)
       console.log(newRoom)
     }
