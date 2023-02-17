@@ -8,7 +8,7 @@ import EnterRoom from '../../components/EnterRoom/EnterRoom'
 import CreateRoom from '../CreateRoom/CreateRoom'
 import RoomPage from '../RoomPage/RoomPage'
 import VotingRoom from '../VotingRoom/VotingRoom'
-//import * as moviesAPI from '../../utilities/movies-api'
+import * as moviesAPI from '../../utilities/movies-api'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -16,13 +16,14 @@ export default function App() {
   const [movies, setMovies] = useState([])
   const [selectedMovies, setSelectedMovies] = useState([])
 
-  // useEffect(function () {
-  //   async function getMovies() {
-  //     await moviesAPI.getMovies()
-  //     setMovies(movies)
-  //   }
-  //   getMovies()
-  // }, [])
+  useEffect(function () {
+    async function getMovies() {
+      const newMovies = await moviesAPI.getMovies()
+      console.log(newMovies)
+      setMovies(newMovies)
+    }
+    getMovies()
+  }, [])
 
   return (
     <main className="App">

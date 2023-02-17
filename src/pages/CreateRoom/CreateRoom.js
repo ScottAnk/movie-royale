@@ -4,6 +4,7 @@ import * as roomsAPI from '../../utilities/rooms-api'
 
 export default function CreateRoom({ room, setRoom }) {
   const navigate = useNavigate()
+
   function createRoom() {
     // navigate to room
     navigate('/room')

@@ -4,8 +4,7 @@ import MovieCard from '../../components/MovieCard/MovieCard'
 // import * as moviesAPI from '../../utilities/movies-api'
 import './RoomPage.css'
 
-export default function RoomPage({ user, room }) {
-  const [movies, setMovies] = useState([])
+export default function RoomPage({ user, room, movies }) {
   const navigate = useNavigate()
   function enterVoting() {
     // navigate to voting
@@ -26,33 +25,11 @@ export default function RoomPage({ user, room }) {
           </h2>
           <div className="SelectMovieContainer">
             <h2>Room code is now: {room.roomCode} </h2>
-            <ul className="MovieCardContainer">
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              <li>Movie Test</li>
-              {/* <MovieCard movies={movies} /> */}
-            </ul>
-            {/* movies.map */}
           </div>
-          <ul>
-            <MovieCard movies={movies} />
+          <ul className="MovieCardContainer">
+            {movies.map((movie, index) => (
+              <MovieCard movie={movie} key={index} />
+            ))}
           </ul>
           <button onClick={enterVoting}>Enter Voting Room</button>
           <button onClick={createRoomConsole}>console room code</button>
