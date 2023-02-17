@@ -98,7 +98,7 @@ label {
 }
 
 input {
-  padding: 1vmin;
+  padding: 0.5vmin 0vmin 0.5vmin 0vmin;
   font-size: 2vmin;
   border: 0.1vmin solid var(--tan-3);
   border-radius: 0.5vmin;
