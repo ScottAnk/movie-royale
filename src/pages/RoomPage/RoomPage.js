@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import MovieCard from '../../components/MovieCard/MovieCard'
 import * as moviesAPI from '../../utilities/movies-api'
+import './RoomPage.css'
 
 export default function RoomPage() {
   const [movies, setMovies] = useState([])
@@ -18,12 +20,16 @@ export default function RoomPage() {
   }, [])
 
   return (
-    <div className="RoomPage">
-      <h2>Room Page</h2>
-      <ul>
-        <li>Movie</li>
-      </ul>
-      <button onClick={enterVoting}>Vote</button>
+    <div className="RoomPageContainer">
+      <div className="RoomContainer">
+        <div className="CardContainer">
+          <h2>Room Page</h2>
+          <ul>
+            <MovieCard movies={movies} />
+          </ul>
+          <button onClick={enterVoting}>Vote</button>
+        </div>
+      </div>
     </div>
   )
 }

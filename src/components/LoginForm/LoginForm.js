@@ -50,10 +50,11 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           />
           <button type="submit">LOG IN</button>
         </form>
+				<div style={{marginBottom: "10px"}}></div>
         <div className="LoginSignUp">
           <h5
             style={{
-              marginTop: '15px',
+              marginTop: '3px',
               marginBottom: '5px',
             }}
           >

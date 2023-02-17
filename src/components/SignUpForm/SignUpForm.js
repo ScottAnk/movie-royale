@@ -80,10 +80,11 @@ export default class SignUpForm extends Component {
               SIGN UP
             </button>
           </form>
+					<div style={{marginBottom: "10px"}}></div>
           <div className="LoginSignUp">
             <h5
               style={{
-                marginTop: '15px',
+                marginTop: '3px',
                 marginBottom: '5px',
               }}
             >
