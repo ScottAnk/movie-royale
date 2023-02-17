@@ -27,41 +27,4 @@ const roomSchema = new Schema({
   },
 })
 
-// generate a room code automatically when room is created
-// function generateCode(next) {
-//   if (!this.isNew) {
-//     return next()
-//   }
-
-//   function makeRandomString() {
-//     // excluding 1, 2, 8, and 0 for reduced ambiguity
-//     const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ345679'
-
-//     let result = ''
-//     for (let i = 0; i < 6; i++) {
-//       const randomIndex = Math.floor(Math.random() * symbols.length)
-//       result += symbols[randomIndex]
-//     }
-
-//     return result
-//   }
-//   //find a unique string
-//   console.log('pre validation hook')
-//   let proposedCode = makeRandomString()
-//   let codeAlreadyUsed = mongoose
-//     .model('Room')
-//     .findOne({ roomCode: proposedCode })
-//     .exec()
-//   while (codeAlreadyUsed) {
-//     proposedCode = makeRandomString()
-//     codeAlreadyUsed = mongoose
-//       .model('Room')
-//       .findOne({ roomCode: proposedCode })
-//       .exec()
-//   }
-
-//   this.roomCode = proposedCode
-//   next()
-// }
-
 module.exports = mongoose.model('Room', roomSchema)
