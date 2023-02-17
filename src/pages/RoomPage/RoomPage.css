@@ -1,22 +1,40 @@
 .RoomPage {
-  padding: 2vmin 15vmin 2vmin 15vmin;
-  background-color: #ffffff;
-  border: 0.1vmin solid var(--tan-3);
+  padding: 5vmin 5vmin 15vmin 5vmin;
+  border: 0.5vmin solid var(--tan-3);
   border-radius: 1vmin;
   margin-bottom: 10px;
 }
 
-.RoomContainer {
-  padding: 25vmin 15vmin 15vmin 15vmin;
-  background-color: #ffffff;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  margin-bottom: 10px;
-}
-
-.CardContainer {
-  padding: 5vmin 8vmin 8vmin 8vmin;
+.RoomCardContainer {
+  padding: 5vmin 0vmin 8vmin 0vmin;
   background-color: #d3c1ae;
   border: 0.1vmin solid var(--tan-3);
   border-radius: 1vmin;
+}
+
+.RoomTextContainer {
+  text-align: center;
+}
+
+.SelectMovieContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    align-content: start
+}
+
+ul {
+  padding-inline-start: 0px;
+  margin-top: 0px;
+}
+
+li {
+  display: inline-block;
+  background-color: lightblue;
+  margin: 20px 0px 5px 0px;
+  padding: 50px 5px 50px 5px;
+  list-style-type: none;
+  margin-left: 0px;
 }

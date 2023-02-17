@@ -1,7 +1,6 @@
 .AuthFormContainer {
-  padding: 10vmin 15vmin 0vmin 15vmin;
-  background-color: #ffffff;
-  border: 0.1vmin solid var(--tan-3);
+  padding: 10vmin 25vmin 0vmin 25vmin;
+  border: 0.5vmin solid black;
   border-radius: 1vmin;
   margin-bottom: 10px;
 }

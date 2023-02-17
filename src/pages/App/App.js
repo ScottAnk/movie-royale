@@ -19,7 +19,7 @@ export default function App() {
           <NavBar user={user} />
           <Routes>
             {/* once a room is created, we want to direct to /room */}
-            <Route path="/room" element={<RoomPage />} />
+            <Route path="/room" element={<RoomPage user={user} />} />
             <Route path="/room/create" element={<CreateRoom />} />
             <Route path="/vote" element={<VotingRoom />} />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}

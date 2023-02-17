@@ -1,26 +1,14 @@
 .EnterRoom {
-  padding: 2vmin 15vmin 2vmin 15vmin;
-  background-color: #ffffff;
-  border: 0.1vmin solid var(--tan-3);
+  padding: 2vmin 25vmin 2vmin 25vmin;
+  border: 0.5vmin solid var(--tan-3);
   border-radius: 1vmin;
   margin-bottom: 10px;
 }
 
-.CardContainer {
-  padding: 3vmin 8vmin 3vmin 8vmin;
-  background-color: #d3c1ae;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  text-align: center;
-}
-
-.RoomCodeForm {
+.EnterRoomForm {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
-  padding: 3vmin;
-  background-color: #d3c1ae;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  text-align: center;
 }
