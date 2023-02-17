@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import MovieCard from '../../components/MovieCard/MovieCard'
 // import * as moviesAPI from '../../utilities/movies-api'
 import './RoomPage.css'
@@ -25,7 +25,7 @@ export default function RoomPage({ user, room }) {
             {user.name}'s Room Page
           </h2>
           <div className="SelectMovieContainer">
-            <h2>Room code is now: {room.roomCode}</h2>
+            <h2>Room code is now: {room.roomCode} </h2>
             <ul className="MovieCardContainer">
               <li>Movie Test</li>
               <li>Movie Test</li>

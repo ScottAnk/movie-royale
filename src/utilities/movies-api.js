@@ -1,7 +1,7 @@
-// import sendRequest from './send-request'
+import sendRequest from './send-request'
 
-// const BASE_URL = '/api/movies'
+const BASE_URL = '/api/movies'
 
-// function getMovies() {
-//   sendRequest(BASE_URL)
-// }
+export function getMovies() {
+  sendRequest(BASE_URL)
+}

@@ -1,22 +1,35 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './EnterRoom.css'
+
+import * as roomsAPI from '../../utilities/rooms-api'
 
 export default function EnterRoom({ user, setUser, room, setRoom }) {
   const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
   const navigate = useNavigate()
+
   function handleSubmit(event) {
     event.preventDefault()
     // set user to true
     setUser(!user)
+    handleSetRoomFinal()
     // navigate to room page
     navigate('/room')
   }
 
+  function handleSetRoomFinal() {
+    async function handleSetRoom(room) {
+      const newRoom = await roomsAPI.getRoomById(room)
+      console.log(newRoom)
+      setRoom(newRoom)
+    }
+    handleSetRoom(room)
+  }
+
   function handleChange(event) {
-    const newRoom = event.target.value
-    // set the room code state
-    setRoom(newRoom)
+    const newRoomCode = event.target.value
+    setRoom(newRoomCode)
+    console.log(room)
   }
 
   return (
@@ -32,8 +45,13 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
         <div className="RoomCodeForm">
           {showRoomCodeForm ? (
             <form autoComplete="off" onSubmit={handleSubmit}>
-              <label style={{textAlign: "center"}}>Enter Room Code: </label>
-              <input style={{marginTop: "5px", marginBottom: "5px", marginRight: "8px"}}
+              <label style={{ textAlign: 'center' }}>Enter Room Code: </label>
+              <input
+                style={{
+                  marginTop: '5px',
+                  marginBottom: '5px',
+                  marginRight: '8px',
+                }}
                 type="text"
                 value={room}
                 onChange={handleChange}

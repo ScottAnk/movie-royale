@@ -12,14 +12,14 @@ import VotingRoom from '../VotingRoom/VotingRoom'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
-  const [room, setRoom] = useState({})
+  const [room, setRoom] = useState('')
   const [movies, setMovies] = useState([])
   const [selectedMovies, setSelectedMovies] = useState([])
 
   // useEffect(function () {
   //   async function getMovies() {
-  //     // await moviesAPI.getMovies()
-  //     // setMovies(movies)
+  //     await moviesAPI.getMovies()
+  //     setMovies(movies)
   //   }
   //   getMovies()
   // }, [])
