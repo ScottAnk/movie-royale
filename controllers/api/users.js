@@ -21,6 +21,11 @@ function checkToken(req, res) {
 async function create(req, res) {
   try {
     // Add the user to the db
+    const emailExist = User.findOne({ email: req.body.email })
+    if(emailExist){
+      res.sendStatus(409).json()
+      return
+    }
     const user = await User.create(req.body)
     // token will be a string
     const token = createJWT(user)
@@ -46,8 +51,20 @@ async function login(req, res) {
   }
 }
 
+async function createAnonymousUser(req, res, next){
+  try{
+    const user = await User.create({})
+    const token = createJWT(user)
+    console.log(user)
+    res.json(token)
+  }catch{
+    next()
+  }
+}
+
 module.exports = {
   create,
   login,
   checkToken,
+  createAnonymousUser,
 }
