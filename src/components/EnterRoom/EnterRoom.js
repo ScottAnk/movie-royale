@@ -29,11 +29,11 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
         >
           Already Have a Room Code?
         </button>
-        <div>
+        <div className="RoomCodeForm">
           {showRoomCodeForm ? (
             <form autoComplete="off" onSubmit={handleSubmit}>
-              <label>Enter Room Code: </label>
-              <input
+              <label style={{textAlign: "center"}}>Enter Room Code: </label>
+              <input style={{marginTop: "5px", marginBottom: "5px", marginRight: "8px"}}
                 type="text"
                 value={room}
                 onChange={handleChange}

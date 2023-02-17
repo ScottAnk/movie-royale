@@ -17,38 +17,40 @@ export default function RoomPage({ user, room }) {
   }
 
   return (
-    <div className="RoomPageContainer">
-      <div className="RoomContainer">
-        <div className="CardContainer">
+    <div className="RoomPage">
+      <div className="RoomCardContainer">
+        <div className="RoomTextContainer">
           <h2 style={{ textTransform: 'capitalize' }}>
             {' '}
             {user.name}'s Room Page
           </h2>
-          <h2>Room code is now: {room.roomCode}</h2>
-          <ul className="MovieCardContainer">
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            <li>Movie Test</li>
-            {/* <MovieCard movies={movies} /> */}
-          </ul>
-          {/* movies.map */}
+          <div className="SelectMovieContainer">
+            <h2>Room code is now: {room.roomCode}</h2>
+            <ul className="MovieCardContainer">
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              <li>Movie Test</li>
+              {/* <MovieCard movies={movies} /> */}
+            </ul>
+            {/* movies.map */}
+          </div>
           <ul>
             <MovieCard movies={movies} />
           </ul>
