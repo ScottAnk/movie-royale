@@ -8,20 +8,17 @@ const userSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      default: 'Guest'
     },
     email: {
       type: String,
-      unique: true,
       trim: true,
       lowercase: true,
-      required: true,
     },
     password: {
       type: String,
       trim: true,
       minlength: 3,
-      required: true,
     },
   },
   {

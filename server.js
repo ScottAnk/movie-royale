@@ -24,6 +24,7 @@ app.use(require('./config/checkToken'))
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/rooms', require('./routes/api/rooms'))
 app.use('/api/movies', require('./routes/api/movies'))
+
 // Protect the api routes below from anon users
 const ensureLoggedIn = require('./config/ensureLoggedIn')
 
