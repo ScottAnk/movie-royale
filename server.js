@@ -23,6 +23,7 @@ app.use(require('./config/checkToken'))
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/rooms', require('./routes/api/rooms'))
+app.use('/api/movies', require('./routes/api/movies'))
 // Protect the api routes below from anon users
 const ensureLoggedIn = require('./config/ensureLoggedIn')
 
@@ -37,3 +38,5 @@ const port = process.env.PORT || 3001
 app.listen(port, function () {
   console.log(`Express app running on port ${port}`)
 })
+
+
