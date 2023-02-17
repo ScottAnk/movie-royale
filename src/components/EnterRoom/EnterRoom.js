@@ -1,20 +1,22 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './EnterRoom.css'
 
-export default function EnterRoom({ roomCode, setRoomCode }) {
+export default function EnterRoom({ user, setUser, room, setRoom }) {
   const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
-
+  const navigate = useNavigate()
   function handleSubmit(event) {
     event.preventDefault()
-    console.log('Moving on to list of movies page (room) ')
-    console.log(roomCode)
-    // possible <Navigate /> once roomcode is entered
-    // https://reactrouter.com/en/main/components/navigate
+    // set user to true
+    setUser(!user)
+    // navigate to room page
+    navigate('/room')
   }
 
   function handleChange(event) {
-    const newRoomCode = event.target.value
-    setRoomCode(newRoomCode)
+    const newRoom = event.target.value
+    // set the room code state
+    setRoom(newRoom)
   }
 
   return (
@@ -33,10 +35,10 @@ export default function EnterRoom({ roomCode, setRoomCode }) {
               <label>Enter Room Code: </label>
               <input
                 type="text"
-                value={roomCode}
+                value={room}
                 onChange={handleChange}
                 placeholder="XXXXXX"
-                name="roomCode"
+                name="room"
                 required
               />
               <button type="submit">Submit Room Code</button>

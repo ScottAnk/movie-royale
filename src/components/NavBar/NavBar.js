@@ -14,7 +14,9 @@ export default function NavBar({ user, setUser }) {
     <div className="NavBarContainer">
       <h2>Movie Royale</h2>
       <div className="NavText">
-        <span>Welcome, <b>{user.name}</b></span>
+        <span>
+          Welcome, <b style={{ textTransform: 'capitalize' }}>{user.name}</b>
+        </span>
         <nav>
           {/* <Link to="/orders">Order History</Link>
       &nbsp; | &nbsp;
