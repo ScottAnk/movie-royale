@@ -11,9 +11,9 @@ router.post('/', ensureLoggedIn, roomCtrl.createRoom)
 router.get('/:roomCode', roomCtrl.joinRoom)
 
 // Cast or update vote on a recommended movie
-router.post('/:roomId/vote', ensureLoggedIn, roomCtrl.vote)
+router.post('/:roomCode/vote', ensureLoggedIn, roomCtrl.vote)
 
 // Add a movie to room's recommended movies
-router.post('/:roomId/recommend', ensureLoggedIn, roomCtrl.recommend)
+router.post('/:roomCode/recommend', ensureLoggedIn, roomCtrl.recommend)
 
 module.exports = router
