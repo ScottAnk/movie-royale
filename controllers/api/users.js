@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('../../models/user')
-const { getNextKeyDef } = require('@testing-library/user-event/dist/keyboard/getNextKeyDef')
 
 /*-- Helper Functions --*/
 
