@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
 
-const recommendedMovie = new Schema()
+const recommendedMovieSchema = require('./recommendedMovieSchema')
+
+const Schema = mongoose.Schema
 
 const roomSchema = new Schema({
   ownerId: {
@@ -22,7 +23,7 @@ const roomSchema = new Schema({
     default: false,
   },
   recommendedMovies: {
-    type: [recommendedMovie],
+    type: [recommendedMovieSchema],
     default: [],
   },
   locked: {
