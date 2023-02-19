@@ -1,0 +1,51 @@
+.RoomPageContainer {
+  margin-bottom: 10vmin;
+  padding: 0vmin 0vmin 0vmin 0vmin;
+  border-radius: 1vmin;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.RoomCardContainer {
+  margin-top: 22.5vmin;
+  margin-left: 4vmin;
+  padding: 5vmin;
+  background-color: var(--lightbrown);
+  border: 0.1vmin groove var(--lightgreen);
+  border-radius: 1vmin;
+}
+
+.EnterRoomForm {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1vmin;
+  margin-top: 0vmin;
+}
+
+.RoomCodeSubmit {
+  margin: 3vmin 18vmin 1vmin 18vmin;
+  padding: 2vmin 1vmin 2vmin 1vmin;
+}
+
+@media screen and (max-width: 1450px) {
+  .RoomPageContainer {
+    margin-top: -3vmin;
+  }
+
+  .RoomCardContainer {
+    margin: 0vmin;
+    padding: 0vmin 9vmin 2vmin 7vmin;
+  }
+  .EnterRoomForm {
+    margin-top: 0vmin;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .RoomPageContainer {
+    margin-top: -5vmin;
+  }
+}

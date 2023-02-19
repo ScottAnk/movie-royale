@@ -9,10 +9,10 @@
   --lightblue: #E6EFD7;
   --lightgreen: #DDE5B6;
   --olive: #8b956d;
-  --lightbrown: #c39a7b;
-  --darkbrown: #856550;
-  --orange: #FCCD94;
-  --text-light: #968c84;
+  --lightbrown: #fce0bc;
+  --darkbrown: #d6b199;
+  --orange: #edc6a8;
+  --text-light: #e3c8b2;
   --text-dark: #615954;
 }
 
@@ -24,22 +24,26 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--lightblue);
+  background-color: var(--orange);
   padding: 2vmin;
   height: 100vh;
-  color: var(--text-dark)
+  color: var(--text-dark);
 }
 
 /* CONTAINERS */
 
+.BodyContainer {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5vmin;
+}
+
 .PageContainer {
-  padding: 3vmin 30vmin 0vmin 30vmin;
-  border: 0.5vmin solid black;
+  padding: 6vmin 0vmin 0vmin 0vmin;
   border-radius: 1vmin;
   margin-bottom: 10px;
   display: flex;
@@ -50,9 +54,9 @@ body {
 }
 
 .CardContainer {
-  padding: 5vmin 8vmin 8vmin 8vmin;
+  padding: 2vmin 5vmin 3vmin 5vmin;
   background-color: var(--lightbrown);
-  border: 0.1vmin solid var(--lightgreen);
+  border: 0.1vmin groove var(--lightgreen);
   border-radius: 1vmin;
 }
 
@@ -60,16 +64,33 @@ body {
 
 h1 {
   font-family: 'Gloock', serif;
-  font-size: 36px;
+  font-size: 5vmin;
 }
 
 h2 {
   font-family: 'Joti One', cursive;
+  color: rgb(77, 63, 63);
+  font-size: 5vmin;
 }
 
 h3 {
   font-family: 'Asul', sans-serif;
+    font-size: 3vmin;
 }
+
+.BreakContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.SectionBreak {
+  height: 2px;
+  width: 50vmin;
+  background: var(--text-dark);
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -87,18 +108,21 @@ form {
   grid-template-columns: 1fr 1fr;
   gap: 1vmin;
   color: var(--text-dark);
+  margin-bottom: 10px;
 }
 
 label {
-  font-size: 2vmin;
+  font-family: 'Asul', sans-serif;
+  font-size: 3vmin;
   display: flex;
   align-items: center;
 }
 
 input {
-  padding: 0.5vmin 0vmin 0.5vmin 0vmin;
-  font-size: 2vmin;
-  border: 0.1vmin solid var(--lightbrown);
+  margin-left: -5vmin;
+  padding: 1vmin;
+  font-size: 2.5vmin;
+  border: 0.1vmin solid var(--text-dark);
   border-radius: 0.5vmin;
   color: var(--text-dark);
   background-image: none !important;
@@ -106,16 +130,28 @@ input {
   outline: none;
 }
 
+input::placeholder {
+  font-family: 'Asul', sans-serif;
+  font-size: 2vmin;
+  text-align: center;
+
+}
+
 input:focus {
   border-color: var(--olive);
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 button {
+  font-family: 'Asul', sans-serif;
   margin: 1vmin 0vmin 1vmin 0vmin;
   padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
+  color: white;
+  background-color: var(--olive);
+  font-size: 2.15vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -126,21 +162,37 @@ button {
 }
 
 button.btn-sm {
-  font-size: 1.5vmin;
+  font-size: 2vmin;
   padding: 0.6vmin 0.8vmin;
 }
 
 button.btn-xs {
-  font-size: 1vmin;
+  font-size: 2vmin;
   padding: 0.4vmin 0.5vmin;
 }
 
 button:disabled,
 form:invalid button[type='submit'] {
   cursor: not-allowed;
-  background-color: var(--orange);
+  background-color: var(--olive);
 }
 
 button[type='submit'] {
   grid-column: span 2;
+  margin-bottom: 2vmin;
+}
+
+@media screen and (max-width: 1450px) {
+  .BodyContainer {
+    margin: 0vmin;
+  }
+  .PageContainer {
+    padding: 2vmin 0vmin 0vmin 0vmin;
+  }
+  .CardContainer {
+    padding: 2vmin 10vmin 3vmin 10vmin;
+  }
+  h2 {
+    font-size: 30px;
+  }
 }

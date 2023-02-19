@@ -5,7 +5,7 @@
   margin-bottom: 10px;
 }
 
-.RoomCardContainer {
+.RoomCard {
   padding: 5vmin 0vmin 8vmin 0vmin;
   background-color: #d3c1ae;
   border: 0.1vmin solid var(--tan-3);

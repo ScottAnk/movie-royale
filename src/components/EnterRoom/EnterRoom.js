@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './EnterRoom.css'
 
 import * as roomsAPI from '../../utilities/rooms-api'
 
@@ -32,33 +33,35 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   }
 
   return (
-    <div className="PageContainer">
-      <div className="CardContainer">
-        <h2>Let's Get Watchin'</h2>
+    <div className="RoomPageContainer">
+      <div className="RoomCardContainer">
+        <h2 style={{ fontSize: '5vmin' }}><u>Let's Get Watchin'</u></h2>
         <button
           onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
-          style={{ display: showRoomCodeForm ? 'none' : 'inline-block' }}
+          style={{
+            marginTop: '-1vmin',
+            display: showRoomCodeForm ? 'none' : 'inline-block',
+          }}
         >
           Already Have a Room Code?
         </button>
-        <div className="EnterRoomForm">
-          {showRoomCodeForm ? (
-            <form autoComplete="off" onSubmit={handleSubmit}>
-              <label style={{ textAlign: 'center' }}>Enter Room Code: </label>
+
+        {showRoomCodeForm ? (
+          <form autoComplete="off" onSubmit={handleSubmit} className="EnterRoomForm">
+              <label>Enter Room Code: </label>
               <input
                 type="text"
                 value={room}
                 onChange={handleChange}
-                placeholder="XXXXXX"
+                placeholder="Enter 6-Digit Code Here"
                 name="room"
                 required
               />
-              <button type="submit">Submit Room Code</button>
-            </form>
-          ) : (
-            <div></div>
-          )}
-        </div>
+            <button type="submit" className="RoomCodeSubmit">Submit Room Code</button>
+          </form>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   )

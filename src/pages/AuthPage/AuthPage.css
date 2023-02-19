@@ -1,14 +1,12 @@
-.AuthCardContainer {
-  margin-bottom: 80px;
-}
-
 .AuthHeader {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  font-size: 5vmin;
 }
 
 .LoginOrSignUp {
   text-align: center;
-  margin: 30px 0px -20px 0px;
+  margin: 30px 0px 0px 0px;
+}
+
+.AuthSubmit {
+  margin: 2vmin 22vmin 0vmin 22vmin;
 }
