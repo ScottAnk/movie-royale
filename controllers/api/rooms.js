@@ -4,10 +4,12 @@ const Room = require('../../models/room')
 // generate a new room in database and send it back as a response
 async function createRoom(req, res, next) {
   const roomCode = await generateRoomCode()
+  const roomName = `${req.user.name}'s Room`
 
   Room.create({
     ownerId: req.user._id,
     roomCode: roomCode,
+    roomName: roomName,
   })
     .then((room) => res.json(room))
     .catch(next)

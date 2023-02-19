@@ -21,9 +21,9 @@ function checkToken(req, res) {
 async function create(req, res) {
   try {
     // Add the user to the db
-    const emailExist = User.findOne({ email: req.body.email })
-    if(emailExist){
-      res.sendStatus(409).json()
+    const emailExist = await User.findOne({ email: req.body.email }).exec()
+    if (emailExist) {
+      res.sendStatus(409)
       return
     }
     const user = await User.create(req.body)
@@ -51,13 +51,13 @@ async function login(req, res) {
   }
 }
 
-async function createAnonymousUser(req, res, next){
-  try{
+async function createAnonymousUser(req, res, next) {
+  try {
     const user = await User.create({})
     const token = createJWT(user)
     console.log(user)
     res.json(token)
-  }catch{
+  } catch {
     next()
   }
 }

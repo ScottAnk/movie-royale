@@ -9,6 +9,10 @@ const roomSchema = new Schema({
     ref: 'User',
     required: true,
   },
+  roomName: {
+    type: String,
+    requred: true,
+  },
   roomCode: {
     type: String,
     required: true,
@@ -17,7 +21,7 @@ const roomSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  proposedMovies: {
+  recommendedMovies: {
     type: [recommendedMovie],
     default: [],
   },
