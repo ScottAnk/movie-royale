@@ -35,7 +35,7 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   return (
     <div className="RoomPageContainer">
       <div className="RoomCardContainer">
-        <h2 style={{ fontSize: '5vmin' }}>
+        <h2 className="AuthHeader">
           <u>Let's Get Watchin'</u>
         </h2>
         <button

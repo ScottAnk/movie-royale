@@ -112,8 +112,10 @@ form {
 }
 
 label {
+  margin-top: 0.5vmin;
   font-family: 'Asul', sans-serif;
   font-size: 3vmin;
+  font-weight: bold;
 }
 
 input {
@@ -188,9 +190,21 @@ button[type='submit'] {
     padding: 2vmin 0vmin 0vmin 0vmin;
   }
   .CardContainer {
-    padding: 2vmin 10vmin 3vmin 10vmin;
+    padding: 0vmin 5vmin 3vmin 5vmin;
   }
   h2 {
-    font-size: 30px;
+    font-size: 3vmin;
+  }
+  h3 {
+    font-size: 2.5vmin;
+  }
+  form {
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  label {
+    font-size: 2.5vmin;
+  }
+  input {
+    font-size: 2vmin;
   }
 }

@@ -10,3 +10,9 @@
 .AuthSubmit {
   margin: 2vmin 22vmin 0vmin 22vmin;
 }
+
+@media screen and (max-width: 1450px) {
+  .AuthHeader {
+    font-size: 4vmin;
+  }
+}
