@@ -11,18 +11,21 @@ export default function RoomPage({ user, room, movies }) {
     navigate('/vote')
   }
 
+  // for testing
   function createRoomConsole() {
-    console.log(room)
+    console.log(room.roomName)
+  }
+
+  // for testing
+  function checkUser() {
+    console.log(user)
   }
 
   return (
     <div className="RoomPage">
       <div className="RoomCardContainer">
         <div className="RoomTextContainer">
-          <h2 style={{ textTransform: 'capitalize' }}>
-            {' '}
-            {user.name}'s Room Page
-          </h2>
+          <h2 style={{ textTransform: 'capitalize' }}> {room.roomName} Page</h2>
           <div className="SelectMovieContainer">
             <h2>Room code is now: {room.roomCode} </h2>
           </div>
@@ -32,7 +35,8 @@ export default function RoomPage({ user, room, movies }) {
             ))}
           </ul>
           <button onClick={enterVoting}>Enter Voting Room</button>
-          <button onClick={createRoomConsole}>console room code</button>
+          <button onClick={createRoomConsole}>console room </button>
+          <button onClick={checkUser}>console user</button>
         </div>
       </div>
     </div>
