@@ -114,8 +114,6 @@ form {
 label {
   font-family: 'Asul', sans-serif;
   font-size: 3vmin;
-  display: flex;
-  align-items: center;
 }
 
 input {

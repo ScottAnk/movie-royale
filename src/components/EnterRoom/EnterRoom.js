@@ -35,7 +35,9 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   return (
     <div className="RoomPageContainer">
       <div className="RoomCardContainer">
-        <h2 style={{ fontSize: '5vmin' }}><u>Let's Get Watchin'</u></h2>
+        <h2 style={{ fontSize: '5vmin' }}>
+          <u>Let's Get Watchin'</u>
+        </h2>
         <button
           onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
           style={{
@@ -47,9 +49,16 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
         </button>
 
         {showRoomCodeForm ? (
-          <form autoComplete="off" onSubmit={handleSubmit} className="EnterRoomForm">
+          <div className="RoomCodeFormContainer">
+            <form
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              className="EnterRoomForm"
+            >
               <label>Enter Room Code: </label>
+              <br />
               <input
+                className="RoomCodeInput"
                 type="text"
                 value={room}
                 onChange={handleChange}
@@ -57,8 +66,11 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
                 name="room"
                 required
               />
-            <button type="submit" className="RoomCodeSubmit">Submit Room Code</button>
-          </form>
+              <button type="submit" className="RoomCodeSubmit">
+                Submit Room Code
+              </button>
+            </form>
+          </div>
         ) : (
           <div></div>
         )}
