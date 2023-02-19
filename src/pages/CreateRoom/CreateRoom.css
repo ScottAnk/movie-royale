@@ -4,10 +4,3 @@
   border-radius: 1vmin;
   margin-bottom: 10px;
 }
-
-.CardContainer {
-  padding: 5vmin 8vmin 8vmin 8vmin;
-  background-color: #d3c1ae;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-}

@@ -8,9 +8,9 @@
   --beige: #F0EAD2;
   --lightblue: #E6EFD7;
   --lightgreen: #DDE5B6;
-  --olive: #ADC178;
-  --lightbrown: #A98467;
-  --darkbrown: #6C584C;
+  --olive: #8b956d;
+  --lightbrown: #c39a7b;
+  --darkbrown: #856550;
   --orange: #FCCD94;
   --text-light: #968c84;
   --text-dark: #615954;
@@ -29,10 +29,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--beige);
+  background-color: var(--lightblue);
   padding: 2vmin;
   height: 100vh;
+  color: var(--text-dark)
 }
+
+/* CONTAINERS */
+
+.PageContainer {
+  padding: 3vmin 30vmin 0vmin 30vmin;
+  border: 0.5vmin solid black;
+  border-radius: 1vmin;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.CardContainer {
+  padding: 5vmin 8vmin 8vmin 8vmin;
+  background-color: var(--lightbrown);
+  border: 0.1vmin solid var(--lightgreen);
+  border-radius: 1vmin;
+}
+
+/* HEADERS */
 
 h1 {
   font-family: 'Gloock', serif;
@@ -56,58 +80,12 @@ code {
   height: 100%;
 }
 
-.align-ctr {
-  text-align: center;
-}
-
-.align-rt {
-  text-align: right;
-}
-
-.smaller {
-  font-size: smaller;
-}
-
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-j-end {
-  justify-content: flex-end;
-}
-
-.scroll-y {
-  overflow-y: scroll;
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--darkbrown);
-  color: var(--text-dark);
-  border: 0.1vmin solid var(--beige);
-  border-radius: 1vmin;
-  padding: 0.6vmin;
-  text-align: center;
-  font-size: 2vmin;
-}
-
-p.error-message {
-  color: var(--orange);
-  text-align: center;
-}
+/* FORMS (FORM ELEMENTS, LABELS, INPUTS, BUTTONS) */
 
 form {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vmin;
   color: var(--text-dark);
 }
 
@@ -132,9 +110,8 @@ input:focus {
   border-color: var(--olive);
 }
 
-button,
-a.button {
-  margin: 1vmin;
+button {
+  margin: 1vmin 0vmin 1vmin 0vmin;
   padding: 1vmin;
   color: var(--white);
   background-color: var(--orange);

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './EnterRoom.css'
 
 import * as roomsAPI from '../../utilities/rooms-api'
 
@@ -33,7 +32,7 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   }
 
   return (
-    <div className="EnterRoom">
+    <div className="PageContainer">
       <div className="CardContainer">
         <h2>Let's Get Watchin'</h2>
         <button
@@ -42,16 +41,11 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
         >
           Already Have a Room Code?
         </button>
-        <div className="RoomCodeForm">
+        <div className="EnterRoomForm">
           {showRoomCodeForm ? (
             <form autoComplete="off" onSubmit={handleSubmit}>
               <label style={{ textAlign: 'center' }}>Enter Room Code: </label>
               <input
-                style={{
-                  marginTop: '5px',
-                  marginBottom: '5px',
-                  marginRight: '8px',
-                }}
                 type="text"
                 value={room}
                 onChange={handleChange}

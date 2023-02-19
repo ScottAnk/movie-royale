@@ -29,8 +29,8 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
 
   return (
     <div>
-      <div className="AuthCardContainer">
-        <h2 className="AuthHeader">Let's Get'cha Logged In</h2>
+      <div className="CardContainer">
+        <h2>Let's Get'cha Logged In</h2>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Email</label>
           <input
@@ -51,7 +51,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           <button type="submit">LOG IN</button>
         </form>
 				<div style={{marginBottom: "10px"}}></div>
-        <div className="LoginSignUp">
+        <div className="LoginOrSignUp">
           <h5
             style={{
               marginTop: '3px',
