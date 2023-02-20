@@ -16,12 +16,14 @@ export async function createRoom() {
 
 export async function fetchRoom(roomCode) {
   const room = await roomsAPI.getRoomById(roomCode)
+
   localStorage.setItem('room', JSON.stringify(room))
   return room
 }
 
 export async function addNewVote(roomCode, body) {
   const room = await roomsAPI.vote(roomCode, body)
-  console.log(body)
+
+  localStorage.setItem('room', JSON.stringify(room))
   return room
 }

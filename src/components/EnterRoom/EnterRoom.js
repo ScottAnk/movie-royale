@@ -4,34 +4,35 @@ import './EnterRoom.css'
 import * as roomsServices from '../../utilities/rooms-services'
 import { tempUser } from '../../utilities/users-service'
 
-export default function EnterRoom({ setUser, setRoom, roomCode, setRoomCode }) {
+export default function EnterRoom({ setUser, setRoom }) {
   const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
+  const [roomCode, setRoomCode] = useState('')
+  const [error, setError] = useState('')
   const navigate = useNavigate()
 
   async function handleSubmit(event) {
     event.preventDefault()
-    // grab the guest user
-    const newUser = await tempUser()
-    console.log(newUser)
-    setUser(newUser)
-    handleSetRoomFinal()
-    // navigate to room page
-    navigate('/room')
-  }
 
-  function handleSetRoomFinal() {
-    async function handleSetRoom(roomCode) {
+    try {
+      // attempt to get the room
       const newRoom = await roomsServices.fetchRoom(roomCode)
       setRoom(newRoom)
+
+      // log in as a guest user
+      const newUser = await tempUser()
+      setUser(newUser)
+
+      // navigate to room page
+      navigate('/room')
+    } catch {
+      setError("oops, that code didn't work")
     }
-    handleSetRoom(roomCode)
   }
 
   function handleChange(event) {
     // default the input to upper case
     const newRoomCode = event.target.value.toUpperCase()
     setRoomCode(newRoomCode)
-    console.log(roomCode)
   }
 
   return (
@@ -57,28 +58,31 @@ export default function EnterRoom({ setUser, setRoom, roomCode, setRoomCode }) {
         </button>
 
         {showRoomCodeForm ? (
-          <div className="RoomCodeFormContainer">
-            <form
-              autoComplete="off"
-              onSubmit={handleSubmit}
-              className="EnterRoomForm"
-            >
-              <label>Enter Room Code: </label>
-              <br />
-              <input
-                className="RoomCodeInput"
-                type="text"
-                value={roomCode}
-                onChange={handleChange}
-                placeholder="Enter 6-Digit Code Here"
-                name="room"
-                required
-              />
-              <button type="submit" className="RoomCodeSubmit">
-                Join Existing Room
-              </button>
-            </form>
-          </div>
+          <>
+            <div className="RoomCodeFormContainer">
+              <form
+                autoComplete="off"
+                onSubmit={handleSubmit}
+                className="EnterRoomForm"
+              >
+                <label>Enter Room Code: </label>
+                <br />
+                <input
+                  className="RoomCodeInput"
+                  type="text"
+                  value={roomCode}
+                  onChange={handleChange}
+                  placeholder="Enter 6-Digit Code Here"
+                  name="room"
+                  required
+                />
+                <button type="submit" className="RoomCodeSubmit">
+                  Join Existing Room
+                </button>
+              </form>
+            </div>
+            <p className="error-message">{error}</p>
+          </>
         ) : (
           <div></div>
         )}

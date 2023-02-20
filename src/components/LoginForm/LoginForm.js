@@ -76,7 +76,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           </button>
         </div>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
+      <p className="error-message">{error}</p>
     </div>
   )
 }
