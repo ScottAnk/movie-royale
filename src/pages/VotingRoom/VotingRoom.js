@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom'
-import MovieCard from '../../components/MovieCard/MovieCard'
 import './VotingRoom.css'
 import RecommendedMovie from '../../components/RecommendedMovie/RecommendedMovie'
 

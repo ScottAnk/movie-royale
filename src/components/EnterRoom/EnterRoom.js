@@ -1,19 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './EnterRoom.css'
-
-import * as roomsAPI from '../../utilities/rooms-api'
 import * as roomsServices from '../../utilities/rooms-services'
 import { tempUser } from '../../utilities/users-service'
 
-export default function EnterRoom({
-  user,
-  setUser,
-  room,
-  setRoom,
-  roomCode,
-  setRoomCode,
-}) {
+export default function EnterRoom({ setUser, setRoom, roomCode, setRoomCode }) {
   const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
   const navigate = useNavigate()
 

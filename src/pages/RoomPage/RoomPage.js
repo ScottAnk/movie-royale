@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import MovieCard from '../../components/MovieCard/MovieCard'
-import { useState } from 'react'
 import './RoomPage.css'
-import { set } from 'mongoose'
 
 export default function RoomPage({ user, room, movies, setRoom }) {
   const movieNames = room.recommendedMovies.map((movie) => movie.title)
