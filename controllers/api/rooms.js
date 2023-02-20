@@ -27,7 +27,48 @@ async function joinRoom(req, res) {
   }
 }
 
-async function vote(req, res, next) {}
+// add user's vote to a recommended movie
+async function vote(req, res, next) {
+  try {
+    const room = await Room.findOne({ roomCode: req.params.roomCode }).exec()
+
+    // find movie in recommended movies list
+    const movie = room.recommendedMovies.find(
+      (movie) => movie.imdbid === req.body.imdbid
+    )
+
+    // declare some test variables
+    const votingYes = req.body.vote.toLowerCase() === 'yes'
+    const alreadyVotedYes = movie.usersVotingYes.includes(req.user._id)
+    const alreadyVotedNo = movie.usersVotingNo.includes(req.user._id)
+
+    // check for duplicate vote, return early
+    if ((votingYes && alreadyVotedYes) || (!votingYes && alreadyVotedNo)) {
+      res.json(room)
+      return
+    }
+
+    // check if user is changing a previous vote
+    if (votingYes && alreadyVotedNo) {
+      //remove them from usersVotingNo
+      const indexInVotingNo = movie.usersVotingNo.indexOf(req.user._id)
+      movie.usersVotingNo.splice(indexInVotingNo, 1)
+    } else if (!votingYes && alreadyVotedYes) {
+      // remove them from usersVotingYes
+      const indexInVotingYes = movie.usersVotingYes.indexOf(req.user._id)
+      movie.usersVotingYes.splice(indexInVotingYes, 1)
+    }
+
+    // add them to the right array
+    const arrayName = 'usersVoting' + (votingYes ? 'Yes' : 'No')
+    movie[arrayName].push(req.user._id)
+    await room.save()
+
+    res.json(room)
+  } catch (error) {
+    next(error)
+  }
+}
 
 async function recommend(req, res, next) {
   try {
@@ -39,7 +80,7 @@ async function recommend(req, res, next) {
     )
     if (positionInReccomendations) {
       // if the movie is already recommended, count this user as a vote for yes
-      req.vote = 'yes'
+      req.body.vote = 'yes'
       await vote(req, res, next)
     } else {
       // otherwise, add the movie to the list of reccomended movies
