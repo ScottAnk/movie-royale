@@ -8,7 +8,7 @@ async function createRoom(req, res, next) {
 
   Room.create({
     ownerId: req.user._id,
-    roomCode: roomCode,
+    // roomCode: roomCode,
     roomName: roomName,
   })
     .then((room) => res.json(room))
@@ -74,7 +74,7 @@ async function generateRoomCode() {
 
   // keep getting strings until we find one that isn't assigned to a room already
   while (codeAlreadyUsed) {
-    proposedCode = makeRandomString()
+    proposedCode = makeRandomCode()
     codeAlreadyUsed = await Room.findOne({ roomCode: proposedCode }).exec()
   }
 
