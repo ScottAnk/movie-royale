@@ -11,7 +11,7 @@ export default function MovieCard({ movie, room, setRoom, isRecommended }) {
     <div className="MovieCard">
       <div className="MovieInfo">
         <h4>
-          <i>'{movie.title}'</i>
+          <i>"{movie.title}"</i>
         </h4>
       </div>
       <li
