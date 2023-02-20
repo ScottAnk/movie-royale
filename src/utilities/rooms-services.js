@@ -4,7 +4,7 @@ export function findRoom() {
   if (localStorage.getItem('room')) {
     return JSON.parse(localStorage.getItem('room'))
   }
-  return ''
+  return null
 }
 
 export async function createRoom() {
