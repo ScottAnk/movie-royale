@@ -6,8 +6,8 @@
 
 :root {
   --beige: #e3daba;
-  --lightblue: #E6EFD7;
-  --lightgreen: #DDE5B6;
+  --lightblue: #e6efd7;
+  --lightgreen: #dde5b6;
   --olive: #8b956d;
   --lightbrown: #fce0bc;
   --darkbrown: #d6b199;
@@ -75,12 +75,12 @@ h2 {
 
 h3 {
   font-family: 'Asul', sans-serif;
-    font-size: 3vmin;
+  font-size: 3vmin;
 }
 
 h4 {
   font-family: 'Glook', serif;
-    font-size: 2.5vmin;
+  font-size: 2.5vmin;
 }
 
 ul {
@@ -104,7 +104,6 @@ li {
   width: 50vmin;
   background: var(--text-dark);
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -149,7 +148,6 @@ input::placeholder {
   font-family: 'Asul', sans-serif;
   font-size: 2vmin;
   text-align: center;
-
 }
 
 input:focus {
