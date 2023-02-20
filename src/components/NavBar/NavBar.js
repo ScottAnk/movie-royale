@@ -11,15 +11,15 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <div className='NavBarContainer'>
+    <div className="NavBarContainer">
       <h1>Movie Royale</h1>
-      <div className='NavText'>
+      <div className="NavText">
         <span>
           Welcome, <b style={{ textTransform: 'capitalize' }}>{user.name}</b>
         </span>
         <nav>
           &nbsp; | &nbsp;
-          <Link to='' onClick={handleLogOut}>
+          <Link to="" onClick={handleLogOut}>
             Log Out
           </Link>
         </nav>

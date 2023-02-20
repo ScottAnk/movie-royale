@@ -20,9 +20,7 @@ async function joinRoom(req, res) {
     const room = await Room.findOne({ roomCode: req.params.roomCode })
     res.json(room)
     if (!room) throw new Error()
-  } catch {
-
-  }
+  } catch {}
 }
 
 // add user's vote to a recommended movie

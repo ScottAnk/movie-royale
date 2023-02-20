@@ -1,13 +1,13 @@
 export default function RecommendedMovie({ movie }) {
   return (
-    <div className='MovieCard'>
-      <div className='MovieInfo'>
+    <div className="MovieCard">
+      <div className="MovieInfo">
         <h4>
           <i>'{movie.title}'</i>
         </h4>
       </div>
       <li
-        className='MoviePoster'
+        className="MoviePoster"
         style={{
           backgroundImage: `url(${movie.image})`,
           backgroundPosition: 'center',
