@@ -29,7 +29,7 @@ export default function App() {
     <main className="App">
       {user ? (
         <>
-          <NavBar user={user} />
+          <NavBar user={user} setUser={setUser} setRoom={setRoom} />
           <Routes>
             {/* once a room is created, we want to direct to /room */}
             <Route

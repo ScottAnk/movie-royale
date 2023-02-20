@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom'
 import * as userService from '../../utilities/users-service'
+import * as roomsService from '../../utilities/rooms-services'
 import './NavBar.css'
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, setRoom }) {
   function handleLogOut() {
-    // Remove token using the user service
+    // Remove token and room
     userService.logOut()
-    // Update user state in App
+    roomsService.leaveRoom()
+
+    // Update user and room states in App
     setUser(null)
+    setRoom(null)
   }
 
   return (
