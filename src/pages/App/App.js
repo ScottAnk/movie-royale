@@ -34,7 +34,15 @@ export default function App() {
             {/* once a room is created, we want to direct to /room */}
             <Route
               path="/room"
-              element={<RoomPage user={user} room={room} movies={movies} />}
+              element={
+                <RoomPage
+                  user={user}
+                  room={room}
+                  movies={movies}
+                  selectedMovies={selectedMovies}
+                  setSelectedMovies={setSelectedMovies}
+                />
+              }
             />
             <Route
               path="/room/create"
@@ -42,9 +50,7 @@ export default function App() {
             />
             <Route
               path="/vote"
-              element={
-                <VotingRoom movies={movies} selectedMovies={selectedMovies} />
-              }
+              element={<VotingRoom selectedMovies={selectedMovies} />}
             />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route

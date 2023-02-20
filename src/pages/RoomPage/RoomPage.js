@@ -3,8 +3,15 @@ import { useState } from 'react'
 import MovieCard from '../../components/MovieCard/MovieCard'
 // import * as moviesAPI from '../../utilities/movies-api'
 import './RoomPage.css'
+import { set } from 'mongoose'
 
-export default function RoomPage({ user, room, movies }) {
+export default function RoomPage({
+  user,
+  room,
+  movies,
+  selectedMovies,
+  setSelectedMovies,
+}) {
   const navigate = useNavigate()
   function enterVoting() {
     // navigate to voting
@@ -31,7 +38,12 @@ export default function RoomPage({ user, room, movies }) {
           </div>
           <ul className="MovieCardContainer">
             {movies.map((movie, index) => (
-              <MovieCard movie={movie} key={index} />
+              <MovieCard
+                movie={movie}
+                key={index}
+                selectedMovies={selectedMovies}
+                setSelectedMovies={setSelectedMovies}
+              />
             ))}
           </ul>
           <button onClick={enterVoting}>Enter Voting Room</button>
