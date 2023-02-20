@@ -53,7 +53,7 @@ export default function App() {
             <Route
               path="/*"
               element={
-                room === '' ? (
+                room === null ? (
                   <Navigate to="/room/create" />
                 ) : (
                   <Navigate to="/room" />
