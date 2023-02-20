@@ -1,26 +1,26 @@
-export default function MovieCard({
-  movie,
-  selectedMovies,
-  setSelectedMovies,
-}) {
-  function handleRecommend(event) {
-    console.log(movie.imdbid)
-    const recomMovie = movie
-    setSelectedMovies(...selectedMovies, recomMovie)
-    console.log(selectedMovies)
+import { selectMovie } from '../../utilities/rooms-api'
+import { useState, useEffect } from 'react'
+
+export default function MovieCard({ movie, room, setRoom, isRecommended }) {
+  async function handleRecommend(event) {
+    const updatedRoom = await selectMovie(room.roomCode, movie)
+    setRoom(updatedRoom)
+    console.log(room)
   }
 
   return (
-
     <div className="MovieCard">
       <div className="MovieInfo">
-        <h4><i>"{movie.title}"</i>
+        <h4>
+          <i>"{movie.title}"</i>
         </h4>
       </div>
       <li
         className="MoviePoster"
         style={{
-          backgroundImage: `url(${movie.image})`,
+          backgroundImage: isRecommended
+            ? `radial-gradient(red, yellow)`
+            : `url(${movie.image})`,
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: '100% 100%',
@@ -32,6 +32,13 @@ export default function MovieCard({
           maxWidth: 'auto',
         }}
       ></li>
+      <button
+        disabled={isRecommended}
+        onClick={handleRecommend}
+        style={{ margin: '3vmin' }}
+      >
+        {isRecommended ? 'Recommended' : 'Recommend'}
+      </button>
     </div>
   )
 }

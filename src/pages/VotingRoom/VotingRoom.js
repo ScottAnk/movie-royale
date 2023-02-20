@@ -1,12 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import './VotingRoom.css'
+import RecommendedMovie from '../../components/RecommendedMovie/RecommendedMovie'
 
-export default function VotingRoom({ movies }) {
+export default function VotingRoom({ room }) {
   return (
     <div className="VotingRoom">
       <div className="CardContainer">
-        <h2>Let's Get Votin'</h2>
+        {room.recommendedMovies.map((movie, index) => (
+          <RecommendedMovie movie={movie} key={index} />
+        ))}
       </div>
     </div>
   )

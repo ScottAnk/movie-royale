@@ -10,3 +10,7 @@ export function getRoom() {
 export function getRoomById(roomCode) {
   return sendRequest(BASE_URL + `/${roomCode}`)
 }
+
+export async function selectMovie(roomCode, movie) {
+  return sendRequest(BASE_URL + `/${roomCode}` + '/recommend', 'POST', movie)
+}

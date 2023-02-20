@@ -8,13 +8,14 @@ import CreateRoom from '../CreateRoom/CreateRoom'
 import RoomPage from '../RoomPage/RoomPage'
 import VotingRoom from '../VotingRoom/VotingRoom'
 import * as moviesAPI from '../../utilities/movies-api'
+import { findRoom } from '../../utilities/rooms-services'
 import './App.css'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
-  const [room, setRoom] = useState('')
+  const [room, setRoom] = useState(findRoom())
+  const [roomCode, setRoomCode] = useState('')
   const [movies, setMovies] = useState([])
-  const [selectedMovies, setSelectedMovies] = useState([])
 
   useEffect(function () {
     async function getMovies() {
@@ -39,8 +40,7 @@ export default function App() {
                   user={user}
                   room={room}
                   movies={movies}
-                  selectedMovies={selectedMovies}
-                  setSelectedMovies={setSelectedMovies}
+                  setRoom={setRoom}
                 />
               }
             />
@@ -48,10 +48,7 @@ export default function App() {
               path="/room/create"
               element={<CreateRoom room={room} setRoom={setRoom} />}
             />
-            <Route
-              path="/vote"
-              element={<VotingRoom selectedMovies={selectedMovies} />}
-            />
+            <Route path="/vote" element={<VotingRoom room={room} />} />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route
               path="/*"
@@ -67,14 +64,16 @@ export default function App() {
         </>
       ) : (
         <>
-        <div className="BodyContainer">
-          <AuthPage setUser={setUser} />
-          <EnterRoom
-            user={user}
-            setUser={setUser}
-            room={room}
-            setRoom={setRoom}
-          />
+          <div className="BodyContainer">
+            <AuthPage setUser={setUser} />
+            <EnterRoom
+              user={user}
+              setUser={setUser}
+              room={room}
+              setRoom={setRoom}
+              roomCode={roomCode}
+              setRoomCode={setRoomCode}
+            />
           </div>
         </>
       )}

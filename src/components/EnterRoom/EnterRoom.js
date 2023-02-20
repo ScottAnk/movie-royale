@@ -3,9 +3,17 @@ import { useNavigate } from 'react-router-dom'
 import './EnterRoom.css'
 
 import * as roomsAPI from '../../utilities/rooms-api'
+import * as roomsServices from '../../utilities/rooms-services'
 import { tempUser } from '../../utilities/users-service'
 
-export default function EnterRoom({ user, setUser, room, setRoom }) {
+export default function EnterRoom({
+  user,
+  setUser,
+  room,
+  setRoom,
+  roomCode,
+  setRoomCode,
+}) {
   const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
   const navigate = useNavigate()
 
@@ -21,18 +29,18 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   }
 
   function handleSetRoomFinal() {
-    async function handleSetRoom(room) {
-      const newRoom = await roomsAPI.getRoomById(room)
+    async function handleSetRoom(roomCode) {
+      const newRoom = await roomsServices.fetchRoom(roomCode)
       setRoom(newRoom)
     }
-    handleSetRoom(room)
+    handleSetRoom(roomCode)
   }
 
   function handleChange(event) {
     // default the input to upper case
     const newRoomCode = event.target.value.toUpperCase()
-    setRoom(newRoomCode)
-    console.log(room)
+    setRoomCode(newRoomCode)
+    console.log(roomCode)
   }
 
   return (
@@ -41,8 +49,12 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
         <h2 className="AuthHeader">
           <u>Let's Get Watchin'</u>
         </h2>
-        <h4 style={{marginBottom: "-2vmin"}}><i>Have a room code?</i></h4>
-        <h4 style={{marginBottom: "5vmin"}}>You can join your party using this form here:</h4>
+        <h4 style={{ marginBottom: '-2vmin' }}>
+          <i>Have a room code?</i>
+        </h4>
+        <h4 style={{ marginBottom: '5vmin' }}>
+          You can join your party using this form here:
+        </h4>
         <button
           onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
           style={{
@@ -65,7 +77,7 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
               <input
                 className="RoomCodeInput"
                 type="text"
-                value={room}
+                value={roomCode}
                 onChange={handleChange}
                 placeholder="Enter 6-Digit Code Here"
                 name="room"

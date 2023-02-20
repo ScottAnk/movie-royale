@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './CreateRoom.css'
-import * as roomsAPI from '../../utilities/rooms-api'
+import * as roomsServices from '../../utilities/rooms-services'
 
 export default function CreateRoom({ room, setRoom }) {
   const navigate = useNavigate()
@@ -10,9 +10,8 @@ export default function CreateRoom({ room, setRoom }) {
     navigate('/room')
     async function getRoom() {
       // grab our room
-      const newRoom = await roomsAPI.getRoom()
+      const newRoom = await roomsServices.createRoom()
       // set the room
-
       setRoom(newRoom)
       console.log(newRoom)
     }
@@ -20,9 +19,11 @@ export default function CreateRoom({ room, setRoom }) {
   }
 
   return (
-    <div className='PageContainer'>
-      <div className='CardContainer'>
-        <h2><u>Let's Get Watchin'</u></h2>
+    <div className="PageContainer">
+      <div className="CardContainer">
+        <h2>
+          <u>Let's Get Watchin'</u>
+        </h2>
         <button onClick={createRoom}>Create Room</button>
       </div>
     </div>
