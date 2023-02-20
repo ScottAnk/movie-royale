@@ -48,7 +48,7 @@ export default function App() {
               path="/room/create"
               element={<CreateRoom room={room} setRoom={setRoom} />}
             />
-            <Route path="/vote" element={<VotingRoom room={room} />} />
+            <Route path="/vote" element={<VotingRoom movies={movies} room={room} setRoom={setRoom} />} />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route
               path="/*"

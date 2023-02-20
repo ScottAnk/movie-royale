@@ -14,3 +14,7 @@ export function getRoomById(roomCode) {
 export async function selectMovie(roomCode, movie) {
   return sendRequest(BASE_URL + `/${roomCode}` + '/recommend', 'POST', movie)
 }
+
+export async function vote(roomCode, body) {
+  return sendRequest(BASE_URL + `/${roomCode}` + '/vote', 'POST', body)
+}

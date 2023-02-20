@@ -27,46 +27,6 @@
   text-align: center;
 }
 
-.MovieListContainer {
-  margin-top: 10vmin;
-  padding: 5vmin 2vmin 5vmin 2vmin;
-  border-radius: 2vmin;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0vmin;
-  grid-row-gap: 5vmin;
-  border-radius: 1.5vmin;
-  border-width: 0.25vmin;
-  border-style: solid;
-  border-color: aliceblue;
-}
-
-.MovieCard {
-  color: white;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: 1fr;
-  margin: 0vmin 2vmin 2vmin 2vmin;
-  padding: 0vmin 2vmin 3vmin 2vmin;
-  border-radius: 2vmin;
-  border-width: 0.5vmin;
-  border-style: solid;
-}
-
-.MovieInfo {
-  margin: 0vmin 0vmin 0vmin 0vmin;
-}
-
-.MoviePoster {
-  margin: 0vmin 0vmin 0vmin 0vmin;
-  padding: 0vmin 0vmin 0vmin 0vmin;
-  border-radius: 1.5vmin;
-  border-width: 1vmin;
-  border-style: solid;
-  border-color: rgb(178, 194, 211);
-}
-
 @media screen and (max-width: 1550px) {
   .RoomPageContainer {
     margin-left: 5vmin;

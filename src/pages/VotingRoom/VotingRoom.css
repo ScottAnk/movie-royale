@@ -1,9 +1,11 @@
-.RoomContainer {
-  padding: 10vmin 5vmin 100vmin 5vmin;
-  background-color: #ffffff;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  margin-bottom: 10px;
+.VotingRoomPageContainer {
+  margin: 0vmin 25vmin 15vmin 25vmin;
+  padding: 2vmin 2vmin 15vmin 2vmin;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .MoviesContainer {

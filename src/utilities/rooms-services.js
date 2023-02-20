@@ -19,3 +19,9 @@ export async function fetchRoom(roomCode) {
   localStorage.setItem('room', JSON.stringify(room))
   return room
 }
+
+export async function addNewVote(roomCode, body) {
+  const room = await roomsAPI.vote(roomCode, body)
+  console.log(body)
+  return room
+}
