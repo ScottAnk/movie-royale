@@ -41,55 +41,55 @@ export default class SignUpForm extends Component {
     const disable = this.state.password !== this.state.confirm
     return (
         <div>
-          <div className="CardContainer">
-            <h2 className="AuthHeader">
+          <div className='CardContainer'>
+            <h2 className='AuthHeader'>
               <u>Let's Sign Ya Up!</u>
             </h2>
-            <form autoComplete="off" onSubmit={this.handleSubmit}>
+            <form autoComplete='off' onSubmit={this.handleSubmit}>
               <label>Name</label>
               <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
+                type='text'
+                name='name'
+                placeholder='Your Name'
                 value={this.state.name}
                 onChange={this.handleChange}
                 required
               />
               <label>Email</label>
               <input
-                type="email"
-                name="email"
-                placeholder="Your Email Address"
+                type='email'
+                name='email'
+                placeholder='Your Email Address'
                 value={this.state.email}
                 onChange={this.handleChange}
                 required
               />
               <label>Password</label>
               <input
-                type="password"
-                name="password"
-                placeholder="Your Password"
+                type='password'
+                name='password'
+                placeholder='Your Password'
                 value={this.state.password}
                 onChange={this.handleChange}
                 required
               />
               <label>Confirm</label>
               <input
-                type="password"
-                name="confirm"
-                placeholder="Re-Enter Password"
+                type='password'
+                name='confirm'
+                placeholder='Re-Enter Password'
                 value={this.state.confirm}
                 onChange={this.handleChange}
                 required
               />
-              <button type="submit" disabled={disable} className="AuthSubmit">
+              <button type='submit' disabled={disable} className='AuthSubmit'>
                 SIGN UP
               </button>
             </form>
-            <div className="BreakContainer">
-              <div className="SectionBreak"></div>
+            <div className='BreakContainer'>
+              <div className='SectionBreak'></div>
             </div>
-            <div className="LoginOrSignUp">
+            <div className='LoginOrSignUp'>
               <h3
                 style={{
                   marginTop: '-10px',
@@ -105,7 +105,7 @@ export default class SignUpForm extends Component {
               </button>
             </div>
           </div>
-          <p className="error-message">&nbsp;{this.state.error}</p>
+          <p className='error-message'>&nbsp;{this.state.error}</p>
         </div>
     )
   }

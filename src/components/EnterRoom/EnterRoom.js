@@ -35,9 +35,9 @@ export default function EnterRoom({ setUser, setRoom, roomCode, setRoomCode }) {
   }
 
   return (
-    <div className="EnterRoom">
-      <div className="RoomCodeCardContainer">
-        <h2 className="AuthHeader">
+    <div className='EnterRoom'>
+      <div className='RoomCodeCardContainer'>
+        <h2 className='AuthHeader'>
           <u>Let's Get Watchin'</u>
         </h2>
         <h4 style={{ marginBottom: '-2vmin' }}>
@@ -57,24 +57,24 @@ export default function EnterRoom({ setUser, setRoom, roomCode, setRoomCode }) {
         </button>
 
         {showRoomCodeForm ? (
-          <div className="RoomCodeFormContainer">
+          <div className='RoomCodeFormContainer'>
             <form
-              autoComplete="off"
+              autoComplete='off'
               onSubmit={handleSubmit}
-              className="EnterRoomForm"
+              className='EnterRoomForm'
             >
               <label>Enter Room Code: </label>
               <br />
               <input
-                className="RoomCodeInput"
-                type="text"
+                className='RoomCodeInput'
+                type='text'
                 value={roomCode}
                 onChange={handleChange}
-                placeholder="Enter 6-Digit Code Here"
-                name="room"
+                placeholder='Enter 6-Digit Code Here'
+                name='room'
                 required
               />
-              <button type="submit" className="RoomCodeSubmit">
+              <button type='submit' className='RoomCodeSubmit'>
                 Join Existing Room
               </button>
             </form>

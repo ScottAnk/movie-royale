@@ -32,37 +32,37 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
 
   return (
     <div>
-      <div className="CardContainer">
-        <h2 className="AuthHeader">
+      <div className='CardContainer'>
+        <h2 className='AuthHeader'>
           <u>Let's Get'cha Logged In</u>
         </h2>
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form autoComplete='off' onSubmit={handleSubmit}>
           <label>Email</label>
           <input
-            type="text"
-            name="email"
-            placeholder="Enter Email Address"
+            type='text'
+            name='email'
+            placeholder='Enter Email Address'
             value={credentials.email}
             onChange={handleChange}
             required
           />
           <label>Password</label>
           <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
+            type='password'
+            name='password'
+            placeholder='Enter Password'
             value={credentials.password}
             onChange={handleChange}
             required
           />
-          <button type="submit" className="AuthSubmit">
+          <button type='submit' className='AuthSubmit'>
             LOGIN
           </button>
         </form>
-        <div className="BreakContainer">
-          <div className="SectionBreak"></div>
+        <div className='BreakContainer'>
+          <div className='SectionBreak'></div>
         </div>
-        <div className="LoginOrSignUp">
+        <div className='LoginOrSignUp'>
           <h3
             style={{
               marginTop: '-10px',
@@ -76,7 +76,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           </button>
         </div>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
+      <p className='error-message'>&nbsp;{error}</p>
     </div>
   )
 }

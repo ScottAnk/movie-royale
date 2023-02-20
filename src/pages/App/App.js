@@ -27,14 +27,14 @@ export default function App() {
   }, [])
 
   return (
-    <main className="App">
+    <main className='App'>
       {user ? (
         <>
           <NavBar user={user} />
           <Routes>
             {/* once a room is created, we want to direct to /room */}
             <Route
-              path="/room"
+              path='/room'
               element={
                 <RoomPage
                   user={user}
@@ -45,18 +45,18 @@ export default function App() {
               }
             />
             <Route
-              path="/room/create"
+              path='/room/create'
               element={<CreateRoom room={room} setRoom={setRoom} />}
             />
-            <Route path="/vote" element={<VotingRoom room={room} />} />
+            <Route path='/vote' element={<VotingRoom room={room} />} />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route
-              path="/*"
+              path='/*'
               element={
                 room === null ? (
-                  <Navigate to="/room/create" />
+                  <Navigate to='/room/create' />
                 ) : (
-                  <Navigate to="/room" />
+                  <Navigate to='/room' />
                 )
               }
             />
@@ -64,7 +64,7 @@ export default function App() {
         </>
       ) : (
         <>
-          <div className="BodyContainer">
+          <div className='BodyContainer'>
             <AuthPage setUser={setUser} />
             <EnterRoom
               user={user}

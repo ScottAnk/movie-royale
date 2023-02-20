@@ -8,14 +8,14 @@ export default function MovieCard({ movie, room, setRoom, isRecommended }) {
   }
 
   return (
-    <div className="MovieCard">
-      <div className="MovieInfo">
+    <div className='MovieCard'>
+      <div className='MovieInfo'>
         <h4>
-          <i>"{movie.title}"</i>
+          <i>'{movie.title}'</i>
         </h4>
       </div>
       <li
-        className="MoviePoster"
+        className='MoviePoster'
         style={{
           backgroundImage: isRecommended
             ? `radial-gradient(red, yellow)`
