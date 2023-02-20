@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import * as usersService from '../../utilities/users-service'
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
+  const navigate = useNavigate()
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
@@ -22,6 +24,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials)
       setUser(user)
+      navigate('/room/create')
     } catch {
       setError('Log In Failed - Try Again')
     }
@@ -30,7 +33,9 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
   return (
     <div>
       <div className="CardContainer">
-        <h2 className="AuthHeader"><u>Let's Get'cha Logged In</u></h2>
+        <h2 className="AuthHeader">
+          <u>Let's Get'cha Logged In</u>
+        </h2>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Email</label>
           <input
@@ -50,11 +55,13 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
             onChange={handleChange}
             required
           />
-          <button type="submit" className="AuthSubmit">LOGIN</button>
+          <button type="submit" className="AuthSubmit">
+            LOGIN
+          </button>
         </form>
         <div className="BreakContainer">
-              <div className="SectionBreak"></div>
-            </div>
+          <div className="SectionBreak"></div>
+        </div>
         <div className="LoginOrSignUp">
           <h3
             style={{
