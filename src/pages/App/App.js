@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import './App.css'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../AuthPage/AuthPage'
 import NavBar from '../../components/NavBar/NavBar'
@@ -9,6 +8,7 @@ import CreateRoom from '../CreateRoom/CreateRoom'
 import RoomPage from '../RoomPage/RoomPage'
 import VotingRoom from '../VotingRoom/VotingRoom'
 import * as moviesAPI from '../../utilities/movies-api'
+import './App.css'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -67,6 +67,7 @@ export default function App() {
         </>
       ) : (
         <>
+        <div className="BodyContainer">
           <AuthPage setUser={setUser} />
           <EnterRoom
             user={user}
@@ -74,6 +75,7 @@ export default function App() {
             room={room}
             setRoom={setRoom}
           />
+          </div>
         </>
       )}
     </main>

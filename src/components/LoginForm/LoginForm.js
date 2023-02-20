@@ -29,13 +29,14 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
 
   return (
     <div>
-      <div className="AuthCardContainer">
-        <h2 className="AuthHeader">Let's Get'cha Logged In</h2>
+      <div className="CardContainer">
+        <h2 className="AuthHeader"><u>Let's Get'cha Logged In</u></h2>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Email</label>
           <input
             type="text"
             name="email"
+            placeholder="Enter Email Address"
             value={credentials.email}
             onChange={handleChange}
             required
@@ -44,24 +45,27 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           <input
             type="password"
             name="password"
+            placeholder="Enter Password"
             value={credentials.password}
             onChange={handleChange}
             required
           />
-          <button type="submit">LOG IN</button>
+          <button type="submit" className="AuthSubmit">LOGIN</button>
         </form>
-				<div style={{marginBottom: "10px"}}></div>
-        <div className="LoginSignUp">
-          <h5
+        <div className="BreakContainer">
+              <div className="SectionBreak"></div>
+            </div>
+        <div className="LoginOrSignUp">
+          <h3
             style={{
-              marginTop: '3px',
+              marginTop: '-10px',
               marginBottom: '5px',
             }}
           >
             Don't have an account yet?
-          </h5>
+          </h3>
           <button onClick={handleShowSignUp}>
-            {showSignUp ? 'Log In' : 'Sign Up'}
+            {showSignUp ? 'Login To Your Account' : 'Create New Account'}
           </button>
         </div>
       </div>

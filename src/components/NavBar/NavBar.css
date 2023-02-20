@@ -3,10 +3,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 3px;
+  margin: 5px;
 }
 
 .NavText {
+  font-size: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

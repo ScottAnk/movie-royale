@@ -1,27 +1,18 @@
-.AuthFormContainer {
-  padding: 10vmin 25vmin 0vmin 25vmin;
-  border: 0.5vmin solid black;
-  border-radius: 1vmin;
-  margin-bottom: 10px;
-}
-
-.AuthCardContainer {
-  padding: 5vmin 8vmin 8vmin 8vmin;
-  background-color: #d3c1ae;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-}
-
 .AuthHeader {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  font-size: 5vmin;
 }
 
-.LoginSignUp {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.LoginOrSignUp {
   text-align: center;
+  margin: 30px 0px 0px 0px;
+}
+
+.AuthSubmit {
+  margin: 2vmin 22vmin 0vmin 22vmin;
+}
+
+@media screen and (max-width: 1450px) {
+  .AuthHeader {
+    font-size: 4vmin;
+  }
 }

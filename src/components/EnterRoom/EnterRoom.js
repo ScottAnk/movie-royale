@@ -37,37 +37,48 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
 
   return (
     <div className="EnterRoom">
-      <div className="CardContainer">
-        <h2>Let's Get Watchin'</h2>
+      <div className="RoomCodeCardContainer">
+        <h2 className="AuthHeader">
+          <u>Let's Get Watchin'</u>
+        </h2>
+        <h4 style={{marginBottom: "-2vmin"}}><i>Have a room code?</i></h4>
+        <h4 style={{marginBottom: "5vmin"}}>You can join your party using this form here:</h4>
         <button
           onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
-          style={{ display: showRoomCodeForm ? 'none' : 'inline-block' }}
+          style={{
+            marginTop: '-1vmin',
+            display: showRoomCodeForm ? 'none' : 'inline-block',
+          }}
         >
-          Already Have a Room Code?
+          Room Code Entry
         </button>
-        <div className="RoomCodeForm">
-          {showRoomCodeForm ? (
-            <form autoComplete="off" onSubmit={handleSubmit}>
-              <label style={{ textAlign: 'center' }}>Enter Room Code: </label>
+
+        {showRoomCodeForm ? (
+          <div className="RoomCodeFormContainer">
+            <form
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              className="EnterRoomForm"
+            >
+              <label>Enter Room Code: </label>
+              <br />
               <input
-                style={{
-                  marginTop: '5px',
-                  marginBottom: '5px',
-                  marginRight: '8px',
-                }}
+                className="RoomCodeInput"
                 type="text"
                 value={room}
                 onChange={handleChange}
-                placeholder="XXXXXX"
+                placeholder="Enter 6-Digit Code Here"
                 name="room"
                 required
               />
-              <button type="submit">Submit Room Code</button>
+              <button type="submit" className="RoomCodeSubmit">
+                Join Existing Room
+              </button>
             </form>
-          ) : (
-            <div></div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   )
