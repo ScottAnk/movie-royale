@@ -5,7 +5,7 @@
 /* CUSTOM COLOR PALETTE */
 
 :root {
-  --beige: #F0EAD2;
+  --beige: #e3daba;
   --lightblue: #E6EFD7;
   --lightgreen: #DDE5B6;
   --olive: #8b956d;
@@ -26,7 +26,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--orange);
+  background-color: var(--beige);
   padding: 2vmin;
   height: 100vh;
   color: var(--text-dark);
@@ -78,6 +78,19 @@ h3 {
     font-size: 3vmin;
 }
 
+ul {
+  padding-inline-start: 0px;
+  margin-top: 0px;
+}
+
+li {
+  display: inline-block;
+  margin: 20px 0px 5px 0px;
+  padding: 50px 5px 50px 5px;
+  list-style-type: none;
+  margin-left: 0px;
+}
+
 .BreakContainer {
   display: flex;
   flex-direction: row;
@@ -120,6 +133,7 @@ label {
 
 input {
   margin-left: -5vmin;
+  margin-right: 7vmin;
   padding: 1vmin;
   font-size: 2.5vmin;
   border: 0.1vmin solid var(--text-dark);

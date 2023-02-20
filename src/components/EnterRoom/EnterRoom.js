@@ -33,8 +33,8 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   }
 
   return (
-    <div className="RoomPageContainer">
-      <div className="RoomCardContainer">
+    <div className="EnterRoom">
+      <div className="RoomCodeCardContainer">
         <h2 className="AuthHeader">
           <u>Let's Get Watchin'</u>
         </h2>

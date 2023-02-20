@@ -16,8 +16,7 @@
 .MovieCardContainer {
   display: flex;
   flex-flow: wrap;
-  justify-content: space-evenly;
-  margin-left: 40px;
+  justify-content: center;
 }
 
 li {
