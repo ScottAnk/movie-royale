@@ -26,7 +26,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--beige);
+  background-color: rgb(162, 173, 162);
   padding: 2vmin;
   height: 100vh;
   color: var(--text-dark);
@@ -55,8 +55,8 @@ body {
 
 .CardContainer {
   padding: 2vmin 5vmin 3vmin 5vmin;
-  background-color: var(--lightbrown);
-  border: 0.1vmin groove var(--lightgreen);
+  background-color: var(--lightblue);
+  border: 0.5vmin solid var(--lightgreen);
   border-radius: 1vmin;
 }
 
@@ -68,7 +68,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Joti One', cursive;
+  font-family: 'Gloock', serif;
   color: rgb(77, 63, 63);
   font-size: 5vmin;
 }
@@ -78,17 +78,18 @@ h3 {
     font-size: 3vmin;
 }
 
+h4 {
+  font-family: 'Glook', serif;
+    font-size: 2.5vmin;
+}
+
 ul {
   padding-inline-start: 0px;
-  margin-top: 0px;
 }
 
 li {
-  display: inline-block;
-  margin: 20px 0px 5px 0px;
-  padding: 50px 5px 50px 5px;
+  background-color: lightblue;
   list-style-type: none;
-  margin-left: 0px;
 }
 
 .BreakContainer {
@@ -162,7 +163,7 @@ input:focus::placeholder {
 button {
   font-family: 'Asul', sans-serif;
   margin: 1vmin 0vmin 1vmin 0vmin;
-  padding: 1vmin;
+  padding: 1.5vmin;
   color: white;
   background-color: var(--olive);
   font-size: 2.15vmin;
@@ -170,7 +171,7 @@ button {
   text-decoration: none;
   text-align: center;
   border: 0.1vmin solid var(--beige);
-  border-radius: 0.5vmin;
+  border-radius: 1vmin;
   outline: none;
   cursor: pointer;
 }

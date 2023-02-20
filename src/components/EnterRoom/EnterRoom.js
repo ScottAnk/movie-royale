@@ -38,6 +38,8 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
         <h2 className="AuthHeader">
           <u>Let's Get Watchin'</u>
         </h2>
+        <h4 style={{marginBottom: "-2vmin"}}><i>Have a room code?</i></h4>
+        <h4 style={{marginBottom: "5vmin"}}>You can join your party using this form here:</h4>
         <button
           onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
           style={{
@@ -45,7 +47,7 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
             display: showRoomCodeForm ? 'none' : 'inline-block',
           }}
         >
-          Already Have a Room Code?
+          Room Code Entry
         </button>
 
         {showRoomCodeForm ? (
@@ -67,7 +69,7 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
                 required
               />
               <button type="submit" className="RoomCodeSubmit">
-                Submit Room Code
+                Join Existing Room
               </button>
             </form>
           </div>
