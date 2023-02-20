@@ -1,5 +1,4 @@
 import { selectMovie } from '../../utilities/rooms-api'
-import { useState, useEffect } from 'react'
 
 export default function MovieCard({ movie, room, setRoom, isRecommended }) {
   async function handleRecommend(event) {
