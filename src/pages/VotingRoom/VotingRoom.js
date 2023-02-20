@@ -2,7 +2,7 @@ import './VotingRoom.css'
 import RecommendedMovie from '../../components/RecommendedMovie/RecommendedMovie'
 
 
-export default function VotingRoom({ movies, room, setRoom }) {
+export default function VotingRoom({ room, setRoom }) {
   return (
     <div className="VotingRoomPageContainer">
       <ul className="MoviesListContainer">
