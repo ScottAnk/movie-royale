@@ -20,9 +20,9 @@ export default function CreateRoom({ room, setRoom }) {
   }
 
   return (
-    <div className="CreateRoomContainer">
-      <div className="CardContainer">
-        <h2>Let's Get Watchin'</h2>
+    <div className='PageContainer'>
+      <div className='CardContainer'>
+        <h2><u>Let's Get Watchin'</u></h2>
         <button onClick={createRoom}>Create Room</button>
       </div>
     </div>

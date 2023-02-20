@@ -16,24 +16,33 @@ export default function RoomPage({ user, room, movies }) {
   }
 
   return (
-    <div className="RoomPage">
+    <div className="RoomPageContainer">
       <div className="RoomCardContainer">
-        <div className="RoomTextContainer">
-          <h2 style={{ textTransform: 'capitalize' }}>
-            {' '}
-            {user.name}'s Room Page
-          </h2>
-          <div className="SelectMovieContainer">
-            <h2>Room code is now: {room.roomCode} </h2>
-          </div>
-          <ul className="MovieCardContainer">
-            {movies.map((movie, index) => (
-              <MovieCard movie={movie} key={index} />
-            ))}
-          </ul>
-          <button onClick={enterVoting}>Enter Voting Room</button>
-          <button onClick={createRoomConsole}>console room code</button>
+        <h1 style={{ textTransform: 'capitalize' }}>
+          <u>{user.name}'s Room Page</u>
+        </h1>
+        <div className="CodeCardContainer">
+          <h3>This is your Room Code:</h3>
+          <h2 style={{
+            backgroundColor: "rgb(178, 194, 211)",
+            marginLeft: "25vmin",
+            marginRight: "25vmin",
+            padding: "1vmin",
+            borderStyle: "solid",
+            borderRadius: "1vmin"
+        }}>{room.roomCode}</h2>
+          <h4><i>(Anyone with this room code will be able to join your session)</i></h4>
         </div>
+        <div>
+          <h1 style={{marginTop: "10vmin", marginBottom: "-5vmin"}}>Select Movies To Vote On:</h1>
+        </div>
+        <ul className="MovieListContainer">
+          {movies.map((movie, index) => (
+            <MovieCard movie={movie} key={index} />
+          ))}
+        </ul>
+        <button onClick={enterVoting}>Enter Voting Room</button>
+        <button onClick={createRoomConsole}>console room code</button>
       </div>
     </div>
   )

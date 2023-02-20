@@ -1,40 +1,111 @@
-.RoomPage {
-  padding: 5vmin 5vmin 15vmin 5vmin;
-  border: 0.5vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  margin-bottom: 10px;
+.RoomPageContainer {
+  margin: 0vmin 25vmin 15vmin 25vmin;
+  padding: 2vmin 2vmin 15vmin 2vmin;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .RoomCardContainer {
-  padding: 5vmin 0vmin 8vmin 0vmin;
-  background-color: #d3c1ae;
-  border: 0.1vmin solid var(--tan-3);
   border-radius: 1vmin;
+}
+
+.CodeCardContainer {
+  margin: 2vmin 40vmin 2vmin 40vmin;
+  color: white;
+  padding: 0.5vmin;
+  background-color: #7b9e81;
+  border-radius: 1.5vmin;
+  border-width: 0.25vmin;
+  border-style: solid;
+  border-color: aliceblue;
 }
 
 .RoomTextContainer {
   text-align: center;
 }
 
-.SelectMovieContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    align-content: start
+.MovieListContainer {
+  margin-top: 10vmin;
+  padding: 5vmin 2vmin 5vmin 2vmin;
+  border-radius: 2vmin;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0vmin;
+  grid-row-gap: 5vmin;
+  border-radius: 1.5vmin;
+  border-width: 0.25vmin;
+  border-style: solid;
+  border-color: aliceblue;
 }
 
-ul {
-  padding-inline-start: 0px;
-  margin-top: 0px;
+.MovieCard {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  margin: 0vmin 2vmin 2vmin 2vmin;
+  padding: 0vmin 2vmin 3vmin 2vmin;
+  border-radius: 2vmin;
+  border-width: 0.5vmin;
+  border-style: solid;
 }
 
-li {
-  display: inline-block;
-  background-color: lightblue;
-  margin: 20px 0px 5px 0px;
-  padding: 50px 5px 50px 5px;
-  list-style-type: none;
-  margin-left: 0px;
+.MovieInfo {
+  margin: 0vmin 0vmin 0vmin 0vmin;
+}
+
+.MoviePoster {
+  margin: 0vmin 0vmin 0vmin 0vmin;
+  padding: 0vmin 0vmin 0vmin 0vmin;
+  border-radius: 1.5vmin;
+  border-width: 1vmin;
+  border-style: solid;
+  border-color: rgb(178, 194, 211);
+}
+
+@media screen and (max-width: 1550px) {
+  .RoomPageContainer {
+    margin-left: 5vmin;
+    margin-right: 5vmin;
+  }
+  .RoomCardContainer {
+    padding: 5vmin 10vmin 5vmin 10vmin;
+  }
+  .CodeCardContainer {
+    margin: 2vmin 25vmin 2vmin 25vmin;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .MovieListContainer {
+    margin-left: 5vmin;
+    margin-right: 5vmin;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .RoomCardContainer {
+    margin: 0vmin 5vmin 0vmin 10vmin;
+    padding: 2vmin 0vmin 0vmin 0vmin;
+  }
+  .CodeCardContainer {
+    margin: 2vmin 0vmin 2vmin 0vmin;
+  }
+  .MovieListContainer {
+    margin-left: 5vmin;
+    margin-right: 5vmin;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+  }
+  .MovieCard {
+    margin-bottom: 3vmin;
+  }
 }
