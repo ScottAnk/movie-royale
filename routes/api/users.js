@@ -8,7 +8,7 @@ router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
 
 // POST /api/users/login
 router.post('/login', usersCtrl.login)
-//POST/api/users/guest
+//POST /api/users/guest
 router.post('/guest', usersCtrl.createAnonymousUser)
 // POST /api/users
 router.post('/', usersCtrl.create)

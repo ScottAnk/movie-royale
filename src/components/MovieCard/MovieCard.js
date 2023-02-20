@@ -1,5 +1,17 @@
-export default function MovieCard({ movie }) {
+export default function MovieCard({
+  movie,
+  selectedMovies,
+  setSelectedMovies,
+}) {
+  function handleRecommend(event) {
+    console.log(movie.imdbid)
+    const recomMovie = movie
+    setSelectedMovies(...selectedMovies, recomMovie)
+    console.log(selectedMovies)
+  }
+
   return (
+
     <div className="MovieCard">
       <div className="MovieInfo">
         <h4><i>"{movie.title}"</i>

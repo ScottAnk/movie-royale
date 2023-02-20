@@ -3,15 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import './EnterRoom.css'
 
 import * as roomsAPI from '../../utilities/rooms-api'
+import { tempUser } from '../../utilities/users-service'
 
 export default function EnterRoom({ user, setUser, room, setRoom }) {
   const [showRoomCodeForm, setShowRoomCodeForm] = useState(false)
   const navigate = useNavigate()
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    // set user to true
-    setUser(!user)
+    // grab the guest user
+    const newUser = await tempUser()
+    console.log(newUser)
+    setUser(newUser)
     handleSetRoomFinal()
     // navigate to room page
     navigate('/room')
@@ -20,14 +23,14 @@ export default function EnterRoom({ user, setUser, room, setRoom }) {
   function handleSetRoomFinal() {
     async function handleSetRoom(room) {
       const newRoom = await roomsAPI.getRoomById(room)
-      console.log(newRoom)
       setRoom(newRoom)
     }
     handleSetRoom(room)
   }
 
   function handleChange(event) {
-    const newRoomCode = event.target.value
+    // default the input to upper case
+    const newRoomCode = event.target.value.toUpperCase()
     setRoom(newRoomCode)
     console.log(room)
   }

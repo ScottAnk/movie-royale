@@ -48,3 +48,9 @@ export async function login(credentials) {
 export function checkToken() {
   return usersAPI.checkToken().then((dateStr) => new Date(dateStr))
 }
+
+export async function tempUser() {
+  const token = await usersAPI.tempUser()
+  localStorage.setItem('token', token)
+  return getUser()
+}
