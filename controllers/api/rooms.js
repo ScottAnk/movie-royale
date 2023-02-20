@@ -15,12 +15,18 @@ async function createRoom(req, res, next) {
     .catch(next)
 }
 
+// find a room based on roomCode and return it to client
 async function joinRoom(req, res) {
   try {
     const room = await Room.findOne({ roomCode: req.params.roomCode })
+    if (!room) throw new Error('room not found')
+
     res.json(room)
-    if (!room) throw new Error()
-  } catch {}
+  } catch (error) {
+    if (error?.message === 'room not found') return res.sendStatus(404)
+
+    next(error)
+  }
 }
 
 // add user's vote to a recommended movie
