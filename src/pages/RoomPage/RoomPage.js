@@ -16,16 +16,6 @@ export default function RoomPage({ user, room, movies, setRoom }) {
     navigate('/vote')
   }
 
-  // for testing
-  function createRoomConsole() {
-    console.log(room)
-  }
-
-  // for testing
-  function checkUser() {
-    console.log(user)
-  }
-
   return (
     <div className="RoomPageContainer">
       <div className="RoomCardContainer">
@@ -64,8 +54,6 @@ export default function RoomPage({ user, room, movies, setRoom }) {
         </ul>
       </div>
       <button onClick={enterVoting}>Enter Voting Room</button>
-      <button onClick={createRoomConsole}>console room </button>
-      <button onClick={checkUser}>console user</button>
     </div>
   )
 }
