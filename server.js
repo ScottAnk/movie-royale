@@ -2,12 +2,17 @@ const express = require('express')
 const path = require('path')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
+const http = require('http')
+const { socketConnection } = require('./lib/socketIo')
 
+// load environment variables and open database connection
 require('dotenv').config()
-// Connect to db after the dotenv above
 require('./config/database')
 
+// initialize the express server and Socket.IO
 const app = express()
+const httpServer = http.createServer(app)
+socketConnection(httpServer)
 
 app.use(logger('dev'))
 // Process data in body of request if
@@ -36,6 +41,6 @@ app.get('/*', function (req, res) {
 
 const port = process.env.PORT || 3001
 
-app.listen(port, function () {
+httpServer.listen(port, function () {
   console.log(`Express app running on port ${port}`)
 })
