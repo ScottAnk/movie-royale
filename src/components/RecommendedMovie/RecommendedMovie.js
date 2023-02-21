@@ -1,12 +1,11 @@
 import * as roomsServices from '../../utilities/rooms-services'
 
 export default function RecommendedMovie({ movie, room, setRoom }) {
-  
   async function handleVote(event) {
     const vote = event.target.name
     const body = {
       imdbid: movie.imdbid,
-      vote: vote
+      vote: vote,
     }
     const updatedRoom = await roomsServices.addNewVote(room.roomCode, body)
     setRoom(updatedRoom)
@@ -15,7 +14,6 @@ export default function RecommendedMovie({ movie, room, setRoom }) {
     console.log(body)
     console.log(updatedRoom)
   }
-
 
   return (
     <div className="MovieCard">
@@ -33,16 +31,35 @@ export default function RecommendedMovie({ movie, room, setRoom }) {
           backgroundSize: '100% 100%',
           height: '100%',
           width: '100%',
-          minHeight: '300px',
-          minWidth: '200px',
-          maxHeight: '300px',
-          maxWidth: 'auto',
+          minHeight: '60vmin',
+          minWidth: '20vmin',
+          maxHeight: '60vmin',
+          maxWidth: '60vmin',
         }}
       ></li>
       <div>
         {/* <button value={`${movie.usersVotingYes.length} Upvotes`}></button> */}
-        <button name="yes" onClick={handleVote}>{`${movie.usersVotingYes.length} Upvotes`}</button>
-        <button name="no" onClick={handleVote}>{`${movie.usersVotingNo.length} Downvotes`}</button>
+        <div className="VotingFooter">
+          <h2><u>Number of Votes</u>:</h2>
+          <div className="VotingScore">
+            <h3 style={{
+              marginRight: "1.5vmin",
+              color: "green"
+
+              }}>{`+ ${movie.usersVotingYes.length} Upvotes`}</h3>
+            <h3 style={{
+              color: "darkred"
+            }}>{`- ${movie.usersVotingNo.length} Downvotes`}</h3>
+          </div>
+          <div>
+          <button name="yes" onClick={handleVote} className="VotingButton">
+            Upvote
+          </button>
+          <button name="no" onClick={handleVote} className="VotingButton">
+            Downvote
+          </button>
+          </div>
+        </div>
       </div>
     </div>
   )

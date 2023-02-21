@@ -1,6 +1,6 @@
 .RoomPageContainer {
-  margin: 0vmin 25vmin 15vmin 25vmin;
-  padding: 2vmin 2vmin 15vmin 2vmin;
+  margin: 5vmin 0vmin 15vmin 0vmin;
+  padding: 2vmin 0vmin 15vmin 0vmin;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
@@ -27,21 +27,14 @@
   text-align: center;
 }
 
-@media screen and (max-width: 1550px) {
-  .RoomPageContainer {
-    margin-left: 5vmin;
-    margin-right: 5vmin;
-  }
+@media screen and (max-width: 1650px) {
   .RoomCardContainer {
     padding: 5vmin 10vmin 5vmin 10vmin;
   }
   .CodeCardContainer {
     margin: 2vmin 25vmin 2vmin 25vmin;
   }
-}
-
-@media screen and (max-width: 1400px) {
-  .MovieListContainer {
+  .MovieGridContainer {
     margin-left: 5vmin;
     margin-right: 5vmin;
     grid-template-columns: repeat(3, 1fr);
@@ -50,15 +43,14 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .RoomCardContainer {
-    margin: 0vmin 5vmin 0vmin 10vmin;
     padding: 2vmin 0vmin 0vmin 0vmin;
   }
   .CodeCardContainer {
     margin: 2vmin 0vmin 2vmin 0vmin;
   }
-  .MovieListContainer {
+  .MovieGridContainer {
     margin-left: 5vmin;
     margin-right: 5vmin;
     grid-template-columns: repeat(2, 1fr);

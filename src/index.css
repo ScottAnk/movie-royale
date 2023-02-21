@@ -23,7 +23,7 @@
 }
 
 body {
-  margin: 0;
+  margin: -5vmin 0vmin -20vmin 0vmin;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(162, 173, 162);
@@ -92,6 +92,11 @@ li {
   list-style-type: none;
 }
 
+.PageTitle {
+  margin-top: -5vmin;
+  font-size: 6vmin;
+}
+
 .BreakContainer {
   display: flex;
   flex-direction: row;
@@ -132,6 +137,7 @@ label {
 }
 
 input {
+  font-family: 'Asul', sans-serif;
   margin-left: -5vmin;
   margin-right: 7vmin;
   padding: 1vmin;
@@ -145,7 +151,6 @@ input {
 }
 
 input::placeholder {
-  font-family: 'Asul', sans-serif;
   font-size: 2vmin;
   text-align: center;
 }
@@ -161,10 +166,10 @@ input:focus::placeholder {
 button {
   font-family: 'Asul', sans-serif;
   margin: 1vmin 0vmin 1vmin 0vmin;
-  padding: 1.5vmin;
+  padding: 2vmin 3vmin 2vmin 3vmin;
   color: white;
   background-color: var(--olive);
-  font-size: 2.15vmin;
+  font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -181,7 +186,7 @@ button.btn-sm {
 
 button.btn-xs {
   font-size: 2vmin;
-  padding: 0.4vmin 0.5vmin;
+  padding: 0.5vmin 0.5vmin;
 }
 
 button:disabled,
@@ -197,9 +202,9 @@ button[type='submit'] {
 
 /* Movie Card Containers */
 
-.MovieListContainer {
-  margin-top: 10vmin;
-  padding: 5vmin 2vmin 5vmin 2vmin;
+.MovieGridContainer {
+  margin: 5vmin;
+  padding: 5vmin 10vmin 5vmin 10vmin;
   border-radius: 2vmin;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -207,9 +212,12 @@ button[type='submit'] {
   grid-column-gap: 0vmin;
   grid-row-gap: 5vmin;
   border-radius: 1.5vmin;
-  border-width: 0.25vmin;
+  border-width: 1vmin;
   border-style: solid;
   border-color: aliceblue;
+  height: 60vmin;
+  width: fit-content;
+  overflow: auto;
 }
 
 .MovieCard {
@@ -223,11 +231,6 @@ button[type='submit'] {
   border-width: 0.5vmin;
   border-style: solid;
 }
-
-.MovieInfo {
-  margin: 0vmin 0vmin 0vmin 0vmin;
-}
-
 .MoviePoster {
   margin: 0vmin 0vmin 0vmin 0vmin;
   padding: 0vmin 0vmin 0vmin 0vmin;
@@ -239,7 +242,7 @@ button[type='submit'] {
 
 @media screen and (max-width: 1450px) {
   .BodyContainer {
-    margin: 0vmin;
+    padding-bottom: 20vmin;
   }
   .PageContainer {
     padding: 2vmin 0vmin 0vmin 0vmin;
@@ -261,5 +264,11 @@ button[type='submit'] {
   }
   input {
     font-size: 2vmin;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .BodyContainer {
+    text-align: center;
   }
 }

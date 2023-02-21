@@ -1,0 +1,24 @@
+.CreateRoomContainer {
+  margin: 10vmin;
+  padding: 6vmin 0vmin 0vmin 0vmin;
+  border-radius: 1vmin;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.CreateRoomCardContainer {
+  padding: 10vmin 5vmin 3vmin 5vmin;
+  background-color: var(--lightblue);
+  border: 0.5vmin solid var(--lightgreen);
+  border-radius: 1vmin;
+}
+
+@media screen and (max-width: 900px) {
+  .CreateRoomCardContainer {
+    padding: -5vmin 10vmin 5vmin 10vmin;
+  }
+}

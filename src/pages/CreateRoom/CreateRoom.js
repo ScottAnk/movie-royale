@@ -15,9 +15,9 @@ export default function CreateRoom({ room, setRoom }) {
   }
 
   return (
-    <div className="PageContainer">
-      <div className="CardContainer">
-        <h2>
+    <div className="CreateRoomContainer">
+      <div className="CreateRoomCardContainer">
+        <h2 className="PageTitle">
           <u>Let's Get Watchin'</u>
         </h2>
         <button onClick={createRoom}>Create Room</button>

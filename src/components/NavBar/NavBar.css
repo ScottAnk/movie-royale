@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 5px;
+  margin: 5vmin 3vmin 2vmin 3vmin;
 }
 
 .NavText {
@@ -12,4 +12,17 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .NavBarContainer {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .NavTitle {
+    font-size: 10vmin;
+  }
+  .NavText {
+    font-size: 5vmin;
+  }
 }
