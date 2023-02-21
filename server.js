@@ -3,7 +3,7 @@ const path = require('path')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
 const http = require('http')
-const { Server: socketServer } = require('socket.io')
+const { socketConnection } = require('./lib/socketIo')
 
 // load environment variables and open database connection
 require('dotenv').config()
@@ -12,13 +12,7 @@ require('./config/database')
 // initialize the express server and Socket.IO
 const app = express()
 const httpServer = http.createServer(app)
-const io = new socketServer(httpServer)
-
-// log socket connections
-io.on('connection', (socket) => {
-  console.log('a user connected')
-  io.emit('test', 'hi from serverland')
-})
+socketConnection(httpServer)
 
 app.use(logger('dev'))
 // Process data in body of request if

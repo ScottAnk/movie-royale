@@ -35,9 +35,11 @@ export default function App() {
 
     socket.on('test', (msg) => {
       console.log(msg)
+      socket.emit('client test', 'right back at you')
     })
 
     return () => {
+      // need to send some kind of disconect message when the user closes the app
       socket.off('connect')
       socket.off('disconnect')
       socket.off('test')
