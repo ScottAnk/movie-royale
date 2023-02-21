@@ -20,31 +20,23 @@ export default function App() {
   const [room, setRoom] = useState(findRoom())
   const [movies, setMovies] = useState([])
 
-  // boilerplate initialization from socket.io website - including useEffect below
-  const [isConnected, setIsConnected] = useState(socket.connected)
-
   // set up socket events
   useEffect(() => {
-    socket.on('connect', () => {
-      setIsConnected(true)
-    })
-
-    socket.on('disconnect', () => {
-      setIsConnected(false)
-    })
-
-    socket.on('test', (msg) => {
-      console.log(msg)
-      socket.emit('client test', 'right back at you')
+    socket.on('room update', (room) => {
+      console.log('recieved room update')
+      localStorage.setItem('room', JSON.stringify(room))
+      setRoom(room)
     })
 
     return () => {
-      // need to send some kind of disconect message when the user closes the app
-      socket.off('connect')
-      socket.off('disconnect')
-      socket.off('test')
+      socket.off('room update')
     }
   }, [])
+
+  function handleSetRoom(room) {
+    socket.emit('join room', room.roomCode)
+    setRoom(room)
+  }
 
   useEffect(function () {
     async function getMovies() {
@@ -59,7 +51,7 @@ export default function App() {
     <main className="App">
       {user ? (
         <>
-          <NavBar user={user} setUser={setUser} setRoom={setRoom} />
+          <NavBar user={user} setUser={setUser} setRoom={handleSetRoom} />
           <Routes>
             {/* once a room is created, we want to direct to /room */}
             <Route
@@ -69,17 +61,17 @@ export default function App() {
                   user={user}
                   room={room}
                   movies={movies}
-                  setRoom={setRoom}
+                  setRoom={handleSetRoom}
                 />
               }
             />
             <Route
               path="/room/create"
-              element={<CreateRoom room={room} setRoom={setRoom} />}
+              element={<CreateRoom room={room} setRoom={handleSetRoom} />}
             />
             <Route
               path="/vote"
-              element={<VotingRoom room={room} setRoom={setRoom} />}
+              element={<VotingRoom room={room} setRoom={handleSetRoom} />}
             />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route
@@ -98,7 +90,7 @@ export default function App() {
         <>
           <div className="BodyContainer">
             <AuthPage setUser={setUser} />
-            <EnterRoom user={user} setUser={setUser} setRoom={setRoom} />
+            <EnterRoom user={user} setUser={setUser} setRoom={handleSetRoom} />
           </div>
         </>
       )}
