@@ -13,21 +13,21 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <h1>Movie Royale</h1>
-      <div className='PageContainer'>
-          {showSignUp ? (
-            <SignUpForm
-              setUser={setUser}
-              showSignUp={showSignUp}
-              handleShowSignUp={handleShowSignUp}
-            />
-          ) : (
-            <LoginForm
-              setUser={setUser}
-              showSignUp={showSignUp}
-              handleShowSignUp={handleShowSignUp}
-            />
-          )}
-        </div>
+      <div className="PageContainer">
+        {showSignUp ? (
+          <SignUpForm
+            setUser={setUser}
+            showSignUp={showSignUp}
+            handleShowSignUp={handleShowSignUp}
+          />
+        ) : (
+          <LoginForm
+            setUser={setUser}
+            showSignUp={showSignUp}
+            handleShowSignUp={handleShowSignUp}
+          />
+        )}
+      </div>
     </main>
   )
 }

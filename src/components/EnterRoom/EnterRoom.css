@@ -11,7 +11,7 @@
 
 .RoomCodeCardContainer {
   padding: 4vmin;
-  background-color: #E6EFD7;
+  background-color: #e6efd7;
   border: 0.5vmin solid var(--lightgreen);
   border-radius: 1vmin;
 }

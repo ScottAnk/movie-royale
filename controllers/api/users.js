@@ -2,8 +2,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('../../models/user')
 
-/*-- Helper Functions --*/
-
 function createJWT(user) {
   return jwt.sign(
     // data payload
