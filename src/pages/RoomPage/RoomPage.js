@@ -1,23 +1,19 @@
 import { useNavigate } from 'react-router-dom'
 import MovieCard from '../../components/MovieCard/MovieCard'
+import * as roomsServices from '../../utilities/rooms-services'
 import './RoomPage.css'
 
 export default function RoomPage({ user, room, movies, setRoom }) {
   const movieNames = room.recommendedMovies.map((movie) => movie.title)
   const navigate = useNavigate()
-  function enterVoting() {
+
+  async function enterVoting() {
+    // re-fetch the room
+    const newRoom = await roomsServices.fetchRoom(room.roomCode)
+    // re-set the room
+    setRoom(newRoom)
     // navigate to voting
     navigate('/vote')
-  }
-
-  // for testing
-  function createRoomConsole() {
-    console.log(room)
-  }
-
-  // for testing
-  function checkUser() {
-    console.log(user)
   }
 
   return (
@@ -58,8 +54,6 @@ export default function RoomPage({ user, room, movies, setRoom }) {
         </ul>
       </div>
       <button onClick={enterVoting}>Enter Voting Room</button>
-      <button onClick={createRoomConsole}>console room </button>
-      <button onClick={checkUser}>console user</button>
     </div>
   )
 }
