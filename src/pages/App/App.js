@@ -21,14 +21,14 @@ export default function App() {
   const [movies, setMovies] = useState([])
 
   // set up socket events
-  useEffect(() => {
-    socket.on('room update', (room) => {
+  useEffect(function () {
+    socket.on('room update', function (room) {
       console.log('recieved room update')
       localStorage.setItem('room', JSON.stringify(room))
       setRoom(room)
     })
 
-    return () => {
+    return function () {
       socket.off('room update')
     }
   }, [])
