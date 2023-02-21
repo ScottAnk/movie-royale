@@ -41,8 +41,8 @@ export default function RoomPage({ user, room, movies, setRoom }) {
                 (Anyone with this room code will be able to join your session)
               </i>
             </h4>
-            <div className='VotingRoomButton'>
-            <button onClick={enterVoting}>Enter Voting Room</button>
+            <div className="VotingRoomButton">
+              <button onClick={enterVoting}>Enter Voting Room</button>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export default function RoomPage({ user, room, movies, setRoom }) {
             </div>
           </ul>
         </div>
-      </div
+      </div>
       <button onClick={enterVoting}>Enter Voting Room</button>
     </div>
   )
