@@ -22,37 +22,48 @@ export default function RoomPage({ user, room, movies, setRoom }) {
         <h2 className="PageTitle" style={{ textTransform: 'capitalize' }}>
           <u>{room.roomName} Page</u>
         </h2>
-        <div className="SelectMovieContainer">
-          <h2
-            style={{
-              backgroundColor: 'rgb(178, 194, 211)',
-              marginLeft: '50vmin',
-              marginRight: '50vmin',
-              padding: '1vmin',
-              borderStyle: 'solid',
-              borderRadius: '1vmin',
-            }}
-          >
-            {room.roomCode}{' '}
-          </h2>
-          <h4>
-            <i>
-              (Anyone with this room code will be able to join your session)
-            </i>
-          </h4>
+        <div className="SectionContainer">
+          <div className="CodeCard">
+            <h2>Room Code:</h2>
+            <h2
+              style={{
+                backgroundColor: 'rgb(178, 194, 211)',
+                margin: '0vmin 65vmin 0vmin 65vmin',
+                padding: '1vmin',
+                borderStyle: 'solid',
+                borderRadius: '1vmin',
+              }}
+            >
+              {room.roomCode}{' '}
+            </h2>
+            <h4>
+              <i>
+                (Anyone with this room code will be able to join your session)
+              </i>
+            </h4>
+            <div className='VotingRoomButton'>
+            <button onClick={enterVoting}>Enter Voting Room</button>
+            </div>
+          </div>
+
+          <ul className="MovieGridContainer">
+            <div className="SelectMovie">
+              <h2>Select Your Picks:</h2>
+            </div>
+            <div className="MoviesContainer">
+              {movies.map((movie, index) => (
+                <MovieCard
+                  movie={movie}
+                  key={index}
+                  room={room}
+                  setRoom={setRoom}
+                  isRecommended={movieNames.includes(movie.title)}
+                />
+              ))}
+            </div>
+          </ul>
         </div>
-        <ul className="MovieGridContainer">
-          {movies.map((movie, index) => (
-            <MovieCard
-              movie={movie}
-              key={index}
-              room={room}
-              setRoom={setRoom}
-              isRecommended={movieNames.includes(movie.title)}
-            />
-          ))}
-        </ul>
-      </div>
+      </div
       <button onClick={enterVoting}>Enter Voting Room</button>
     </div>
   )

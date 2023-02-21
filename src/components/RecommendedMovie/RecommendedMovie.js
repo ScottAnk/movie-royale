@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import * as roomsServices from '../../utilities/rooms-services'
 
-export default function RecommendedMovie({ movie, room, setRoom }) {
+export default function RecommendedMovie({ movie, room, setRoom, winner, getWinningMovie }) {
+  const [wiggle, setWiggle] = useState(false)
+  const [flop, setFlop] = useState(false)
+
   async function handleVote(event) {
     const vote = event.target.name
     const body = {
@@ -13,49 +17,46 @@ export default function RecommendedMovie({ movie, room, setRoom }) {
     // console.log(event.target.name)
     console.log(body)
     console.log(updatedRoom)
+    getWinningMovie()
+
+    if (event.target.name === "yes") {
+      setWiggle(!wiggle)
+    }
+    else if (event.target.name === "no") {
+      setFlop(!flop)
+    }
   }
+
+  console.log(winner)
 
   return (
     <div className="MovieCard">
-      <div className="MovieInfo">
         <h4>
           <i>"{movie.title}"</i>
         </h4>
-      </div>
-      <li
-        className="MoviePoster"
-        style={{
-          backgroundImage: `url(${movie.image})`,
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% 100%',
-          height: '100%',
-          width: '100%',
-          minHeight: '60vmin',
-          minWidth: '20vmin',
-          maxHeight: '60vmin',
-          maxWidth: '60vmin',
-        }}
-      ></li>
+      <li>
+        <img src={`${movie.image}`} className="MoviePoster"/>
+      </li>
       <div>
         {/* <button value={`${movie.usersVotingYes.length} Upvotes`}></button> */}
         <div className="VotingFooter">
-          <h2><u>Number of Votes</u>:</h2>
+          <h3><u>Number of Votes</u>:</h3>
           <div className="VotingScore">
-            <h3 style={{
-              marginRight: "1.5vmin",
-              color: "green"
-
-              }}>{`+ ${movie.usersVotingYes.length} Upvotes`}</h3>
-            <h3 style={{
+            <h4 style={{
+              marginLeft: "1vmin",
+              marginRight: "2vmin",
+              color: winner.title === movie.title ? "gold" : "green"
+              }}><span className={wiggle ? "WiggleNumber" : ""}>{`+ ${movie.usersVotingYes.length}`}</span> Upvotes</h4>
+            <h4 style={{
+              marginRight: "2vmin",
               color: "darkred"
-            }}>{`- ${movie.usersVotingNo.length} Downvotes`}</h3>
+            }}><span className={flop ? "FlopNumber" : ""}>{`- ${movie.usersVotingNo.length}`}</span> Downvotes</h4>
           </div>
-          <div>
-          <button name="yes" onClick={handleVote} className="VotingButton">
+          <div className="VotingButtons">
+          <button name="yes" onClick={handleVote} style={{marginRight: "1.5vmin"}}>
             Upvote
           </button>
-          <button name="no" onClick={handleVote} className="VotingButton">
+          <button name="no" onClick={handleVote}>
             Downvote
           </button>
           </div>
