@@ -15,16 +15,17 @@
 
 .RecdMoviesContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0vmin;
   grid-row-gap: 5vmin;
   border-style: solid;
   border-radius: 1vmin;
   border-color: aliceblue;
-  padding: 5vmin;
+  margin: 0vmin 10vmin 0vmin 10vmin;
+  padding: 3vmin 0vmin 1vmin 0vmin;
   overflow-y: scroll;
-  width: 7000px;
+  width: fit-content;
 }
 
 .VotingFooter {
@@ -39,10 +40,16 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  margin-top: -4vmin;
 }
 
-.VotingButton {
-  margin: 2vmin 0.75vmin 0vmin 0.75vmin;
+.VotingButtons {
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: -1.5vmin 3vmin 2vmin 3vmin;
 }
 
 .WiggleNumber {

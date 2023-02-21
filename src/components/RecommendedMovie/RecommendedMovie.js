@@ -42,18 +42,21 @@ export default function RecommendedMovie({ movie, room, setRoom, winner, getWinn
         <div className="VotingFooter">
           <h3><u>Number of Votes</u>:</h3>
           <div className="VotingScore">
-            <h3 style={{
+            <h4 style={{
+              marginLeft: "1vmin",
+              marginRight: "2vmin",
               color: winner.title === movie.title ? "gold" : "green"
-              }}><span className={wiggle ? "WiggleNumber" : ""}>{`+ ${movie.usersVotingYes.length}`}</span> Upvotes</h3>
-            <h3 style={{
+              }}><span className={wiggle ? "WiggleNumber" : ""}>{`+ ${movie.usersVotingYes.length}`}</span> Upvotes</h4>
+            <h4 style={{
+              marginRight: "2vmin",
               color: "darkred"
-            }}><span className={flop ? "FlopNumber" : ""}>{`- ${movie.usersVotingNo.length}`}</span> Downvotes</h3>
+            }}><span className={flop ? "FlopNumber" : ""}>{`- ${movie.usersVotingNo.length}`}</span> Downvotes</h4>
           </div>
-          <div>
-          <button name="yes" onClick={handleVote} className="VotingButton">
+          <div className="VotingButtons">
+          <button name="yes" onClick={handleVote} style={{marginRight: "1.5vmin"}}>
             Upvote
           </button>
-          <button name="no" onClick={handleVote} className="VotingButton">
+          <button name="no" onClick={handleVote}>
             Downvote
           </button>
           </div>

@@ -80,7 +80,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Glook', serif;
+  font-family: 'Gloock', serif;
   font-size: 2.5vmin;
 }
 
@@ -203,7 +203,6 @@ button[type='submit'] {
 
 .MovieGridContainer {
   margin: 0vmin 0vmin 2vmin 0vmin;
-  padding: 2vmin;
   border-radius: 2vmin;
   display: grid;
   grid-template-columns: repeat(0.5fr, 1fr);
@@ -225,9 +224,9 @@ button[type='submit'] {
   border-style: solid;
   border-radius: 1vmin;
   border-color: aliceblue;
-  padding: 5vmin;
+  padding: 3vmin 1vmin 3vmin 1vmin;
   overflow-y: scroll;
-  width: 4000px;
+  width: 1000px;
 }
 
 .MovieCard {
@@ -240,9 +239,10 @@ button[type='submit'] {
   border-width: 0.5vmin;
   border-style: solid;
 }
+
 .MoviePoster {
-  height: 1250px;
-  width: 900px;
+  height: 30vmin;
+  width: 20vmin;
   border-radius: 1.5vmin;
   border-width: 0.5vmin;
   border-style: solid;
@@ -254,8 +254,8 @@ button[type='submit'] {
 }
 
 .RotatedMoviePoster {
-  height: 1250px;
-  width: 900px;
+  height: 30vmin;
+  width: 20vmin;
   border-radius: 1.5vmin;
   border-width: 0.5vmin;
   border-style: solid;
