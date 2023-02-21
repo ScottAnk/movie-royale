@@ -14,7 +14,6 @@ import './App.css'
 export default function App() {
   const [user, setUser] = useState(getUser())
   const [room, setRoom] = useState(findRoom())
-  const [roomCode, setRoomCode] = useState('')
   const [movies, setMovies] = useState([])
 
   useEffect(function () {
@@ -30,7 +29,7 @@ export default function App() {
     <main className="App">
       {user ? (
         <>
-          <NavBar user={user} />
+          <NavBar user={user} setUser={setUser} setRoom={setRoom} />
           <Routes>
             {/* once a room is created, we want to direct to /room */}
             <Route
@@ -48,7 +47,10 @@ export default function App() {
               path="/room/create"
               element={<CreateRoom room={room} setRoom={setRoom} />}
             />
-            <Route path="/vote" element={<VotingRoom room={room} setRoom={setRoom} />} />
+            <Route
+              path="/vote"
+              element={<VotingRoom room={room} setRoom={setRoom} />}
+            />
             {/* redirect to /room/create if path in address bar hasn't matched a <Route> above */}
             <Route
               path="/*"
@@ -66,14 +68,7 @@ export default function App() {
         <>
           <div className="BodyContainer">
             <AuthPage setUser={setUser} />
-            <EnterRoom
-              user={user}
-              setUser={setUser}
-              room={room}
-              setRoom={setRoom}
-              roomCode={roomCode}
-              setRoomCode={setRoomCode}
-            />
+            <EnterRoom user={user} setUser={setUser} setRoom={setRoom} />
           </div>
         </>
       )}

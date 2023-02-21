@@ -24,6 +24,8 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials)
       setUser(user)
+
+      // send returning users to the room creation view
       navigate('/room/create')
     } catch {
       setError('Log In Failed - Try Again')
@@ -76,7 +78,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
           </button>
         </div>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
+      <p className="error-message">{error}</p>
     </div>
   )
 }
