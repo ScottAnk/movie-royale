@@ -1,26 +1,42 @@
 .RoomPageContainer {
-  margin: 5vmin 0vmin 15vmin 0vmin;
-  padding: 2vmin 0vmin 15vmin 0vmin;
+  margin: 0vmin 0vmin 0vmin 0vmin;
+  padding: 2vmin 0vmin 0vmin 0vmin;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .RoomCardContainer {
   border-radius: 1vmin;
 }
 
-.CodeCardContainer {
-  margin: 2vmin 40vmin 2vmin 40vmin;
+.SectionContainer {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5vmin;
+}
+
+.CodeCard {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding: 0.5vmin;
-  background-color: #7b9e81;
+  margin-left: -5vmin;
+  width: 100%;
+  max-width: 25%;
+  margin-top: 10vmin;
+  padding: 0.5vmin 5vmin 0.5vmin 5vmin;
   border-radius: 1.5vmin;
   border-width: 0.25vmin;
   border-style: solid;
   border-color: aliceblue;
+  overflow-x: hidden;
 }
 
 .RoomTextContainer {
@@ -31,15 +47,12 @@
   .RoomCardContainer {
     padding: 5vmin 10vmin 5vmin 10vmin;
   }
-  .CodeCardContainer {
+  .SectionContainer {
     margin: 2vmin 25vmin 2vmin 25vmin;
   }
   .MovieGridContainer {
-    margin-left: 5vmin;
-    margin-right: 5vmin;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
   }
 }
 
@@ -47,12 +60,10 @@
   .RoomCardContainer {
     padding: 2vmin 0vmin 0vmin 0vmin;
   }
-  .CodeCardContainer {
+  .SectionContainer {
     margin: 2vmin 0vmin 2vmin 0vmin;
   }
   .MovieGridContainer {
-    margin-left: 5vmin;
-    margin-right: 5vmin;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
