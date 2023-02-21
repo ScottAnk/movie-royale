@@ -7,7 +7,6 @@ export default function VotingRoom({ room, setRoom }) {
 
   // return to room page on click
   function roomPage() {
-    console.log(room)
     navigate('/room')
   }
 
@@ -17,20 +16,30 @@ export default function VotingRoom({ room, setRoom }) {
         <button className="ReturnButton" onClick={roomPage}>
           Return to Movies List
         </button>
-        <h2>It's time to vote on the movie you wanna see!</h2>
+        {/* if no movies, display the first header, else display the second */}
+        {room.recommendedMovies.length === 0 ? (
+          <h2> There are no movies yet </h2>
+        ) : (
+          <h2>It's time to vote on the movie you wanna see!</h2>
+        )}
       </div>
-      <ul className="RecommendedMovieContainer">
-        <div className="RecommendedMoviesGrid">
-          {room.recommendedMovies.map((movie, index) => (
-            <RecommendedMovie
-              room={room}
-              setRoom={setRoom}
-              movie={movie}
-              key={index}
-            />
-          ))}
-        </div>
-      </ul>
+      {/* if no movies, don't display anything, else, go ahead and render everything */}
+      {room.recommendedMovies.length === 0 ? (
+        ''
+      ) : (
+        <ul className="RecommendedMovieContainer">
+          <div className="RecommendedMoviesGrid">
+            {room.recommendedMovies.map((movie, index) => (
+              <RecommendedMovie
+                room={room}
+                setRoom={setRoom}
+                movie={movie}
+                key={index}
+              />
+            ))}
+          </div>
+        </ul>
+      )}
     </div>
   )
 }
