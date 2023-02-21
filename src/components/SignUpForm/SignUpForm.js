@@ -1,14 +1,17 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import { signUp } from '../../utilities/users-service'
 
 export default function SignUpForm({ setUser, showSignUp, handleShowSignUp }) {
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
   })
-
   const [error, setError] = useState('')
 
   // format form data and send it to server to create a user
@@ -23,6 +26,9 @@ export default function SignUpForm({ setUser, showSignUp, handleShowSignUp }) {
       const user = await signUp(formData)
       // Update user state with user
       setUser(user)
+
+      // send new users to the room creation screen
+      navigate('/room/create')
     } catch {
       // Invalid signup
       setError('Sign Up Failed - Try Again')
