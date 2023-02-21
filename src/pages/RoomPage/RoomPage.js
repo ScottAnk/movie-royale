@@ -29,17 +29,18 @@ export default function RoomPage({ user, room, movies, setRoom }) {
         <div className="SectionContainer">
           <div className="CodeCard">
             <h2>Room Code:</h2>
-            <h2
+            <h3
               style={{
-                backgroundColor: 'rgb(178, 194, 211)',
+                color: '#615954',
+                backgroundColor: '#e6efd7',
                 margin: '0vmin 65vmin 0vmin 65vmin',
-                padding: '1vmin',
+                padding: '1.5vmin',
                 borderStyle: 'solid',
                 borderRadius: '1vmin',
               }}
             >
               {room.roomCode}{' '}
-            </h2>
+            </h3>
             <h4>
               <i>
                 (Anyone with this room code will be able to join your session)
@@ -52,7 +53,7 @@ export default function RoomPage({ user, room, movies, setRoom }) {
 
           <ul className="MovieGridContainer">
             <div className="SelectMovie">
-              <h2>Select Your Picks:</h2>
+              <h2>Select Your Movie Picks:</h2>
             </div>
             <div className="MoviesContainer">
               {movies.map((movie, index) => (

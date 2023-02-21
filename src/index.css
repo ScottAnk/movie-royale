@@ -81,7 +81,7 @@ h3 {
 
 h4 {
   font-family: 'Gloock', serif;
-  font-size: 2.5vmin;
+  font-size: 2vmin;
 }
 
 ul {
@@ -112,10 +112,6 @@ li {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-#root {
-  height: 100%;
 }
 
 /* FORMS (FORM ELEMENTS, LABELS, INPUTS, BUTTONS) */
