@@ -71,6 +71,9 @@
   .RecommendedMoviesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .ReturnButton {
+    margin-top: 20px;
+  }
 }
 
 /* ----------------------------------------------
