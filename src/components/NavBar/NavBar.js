@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <div className="NavBarContainer">
-      <h1>Movie Royale</h1>
+      <h1 className="NavTitle">Movie Royale</h1>
       <div className="NavText">
         <span>
           Welcome, <b style={{ textTransform: 'capitalize' }}>{user.name}</b>

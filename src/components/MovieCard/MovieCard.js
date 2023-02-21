@@ -9,11 +9,9 @@ export default function MovieCard({ movie, room, setRoom, isRecommended }) {
 
   return (
     <div className="MovieCard">
-      <div className="MovieInfo">
         <h4>
           <i>"{movie.title}"</i>
         </h4>
-      </div>
       <li
         className="MoviePoster"
         style={{
@@ -25,9 +23,9 @@ export default function MovieCard({ movie, room, setRoom, isRecommended }) {
           backgroundSize: '100% 100%',
           height: '100%',
           width: '100%',
-          minHeight: '300px',
-          minWidth: '200px',
-          maxHeight: '300px',
+          minHeight: '200px',
+          minWidth: '100px',
+          maxHeight: '200px',
           maxWidth: 'auto',
         }}
       ></li>

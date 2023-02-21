@@ -1,5 +1,5 @@
 .VotingRoomPageContainer {
-  margin: 0vmin 25vmin 15vmin 25vmin;
+  margin: 0vmin 0vmin 15vmin 0vmin;
   padding: 2vmin 2vmin 15vmin 2vmin;
   display: flex;
   flex-flow: wrap;
@@ -8,15 +8,53 @@
   text-align: center;
 }
 
-.MoviesContainer {
-  padding: 5vmin 0vmin 10vmin 0vmin;
-  background-color: #d3c1ae;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+.RecommendedMoviesGrid {
+  margin-top: 10vmin;
+  padding: 5vmin 2vmin 5vmin 2vmin;
+  border-radius: 2vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0vmin;
+  grid-row-gap: 5vmin;
+  border-radius: 1.5vmin;
+  border-width: 0.25vmin;
+  border-style: solid;
+  border-color: aliceblue;
 }
 
-.MovieCardContainer {
+.RecommendedMovieContainer {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -7vmin;
+}
+
+.VotingFooter {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.VotingScore {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.VotingButton {
+  margin: 2vmin 0.75vmin 0vmin 0.75vmin;
+}
+
+@media screen and (max-width: 1100px) {
+  .VotingRoomPageContainer {
+    margin-top: -5vmin;
+  }
+  .RecommendedMoviesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
