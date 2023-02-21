@@ -1,8 +1,8 @@
-import { selectMovie } from '../../utilities/rooms-api'
+import { recommendMovie } from '../../utilities/rooms-services'
 
 export default function MovieCard({ movie, room, setRoom, isRecommended }) {
   async function handleRecommend(event) {
-    const updatedRoom = await selectMovie(room.roomCode, movie)
+    const updatedRoom = await recommendMovie(room.roomCode, movie)
     setRoom(updatedRoom)
     console.log(room)
   }

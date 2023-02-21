@@ -52,6 +52,13 @@ export async function addNewVote(roomCode, voteOptions) {
   return room
 }
 
+export async function recommendMovie(roomCode, movie) {
+  const room = await roomsAPI.selectMovie(roomCode, movie)
+
+  localStorage.setItem('room', JSON.stringify(room))
+  return room
+}
+
 /** clears the room data in local storage */
 export function leaveRoom() {
   localStorage.removeItem('room')
