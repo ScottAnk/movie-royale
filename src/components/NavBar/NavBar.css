@@ -1,9 +1,9 @@
 .NavBarContainer {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 5vmin 3vmin 0vmin 3vmin;
+  margin: 5vmin 3vmin -2vmin 3vmin;
 }
 
 .NavText {
@@ -14,15 +14,17 @@
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .NavBarContainer {
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
   }
   .NavTitle {
     font-size: 10vmin;
   }
   .NavText {
-    font-size: 1vmin;
+    margin-top: -5vmin;
+    margin-bottom: 10vmin;
+    font-size: 3vmin;
   }
 }

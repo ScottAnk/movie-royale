@@ -1,31 +1,35 @@
-.RecdMovieGrid {
-  margin: 0vmin 0vmin 2vmin 0vmin;
-  padding: 2vmin;
+.HeaderContainer {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.RecdMoviesGrid {
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
   border-radius: 2vmin;
   display: grid;
-  grid-template-columns: repeat(0.5fr, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0vmin;
   grid-row-gap: 5vmin;
   border-radius: 1.5vmin;
   border-width: 1vmin;
-  height: 70vmin;
+  height: 65vmin;
   width: fit-content;
 }
 
 .RecdMoviesContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 0.75fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0vmin;
   grid-row-gap: 5vmin;
   border-style: solid;
   border-radius: 1vmin;
   border-color: aliceblue;
-  margin: 0vmin 10vmin 0vmin 10vmin;
-  padding: 3vmin 0vmin 1vmin 0vmin;
+  padding: 2vmin;
   overflow-y: scroll;
-  width: fit-content;
 }
 
 .VotingFooter {
@@ -33,6 +37,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-content: center;
+  margin-top: -2vmin;
 }
 
 .VotingScore {
@@ -40,7 +45,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-top: -4vmin;
+  column-gap: 4vmin;
 }
 
 .VotingButtons {
@@ -48,8 +53,7 @@
   flex-wrap: row wrap;
   justify-content: center;
   align-items: center;
-
-  margin: -1.5vmin 3vmin 2vmin 3vmin;
+  margin: -1.5vmin 1vmin 1vmin 1vmin;
 }
 
 .WiggleNumber {
@@ -64,15 +68,29 @@
   animation: rotate-90-cw 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@media screen and (max-width: 1100px) {
-  .VotingRoomPageContainer {
-    margin-top: -5vmin;
+@media screen and (max-width: 1800px) {
+  .RecdMoviesContainer {
+    grid-template-columns: repeat(4, 0.5fr);
   }
+}
+
+@media screen and (max-width: 1450px) {
+  .RecdMoviesContainer {
+    grid-template-columns: repeat(3, 0.5fr);
+  }
+}
+
+@media screen and (max-width: 1400px) {
   .RecommendedMoviesGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .ReturnButton {
-    margin-top: 20px;
+}
+
+@media screen and (max-width: 1150px) {
+  .RecdMoviesContainer {
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-column-gap: 2vmin;
+    grid-row-gap: 0vmin;
   }
 }
 
@@ -88,6 +106,7 @@
  * animation jello-diagonal-2
  * ----------------------------------------
  */
+
 @-webkit-keyframes jello-diagonal-2 {
   0% {
     -webkit-transform: skew(0deg 0deg);

@@ -24,33 +24,29 @@ export default function RoomPage({ user, room, movies, setRoom }) {
         </h2>
         <div className="SectionContainer">
           <div className="CodeCard">
-            <h2>Room Code:</h2>
+            <h3><i>Room Code:</i></h3>
             <h3
               style={{
                 color: '#615954',
                 backgroundColor: '#e6efd7',
-                margin: '0vmin 65vmin 0vmin 65vmin',
                 padding: '1.5vmin',
                 borderStyle: 'solid',
                 borderRadius: '1vmin',
               }}
             >
-              {room.roomCode}{' '}
+              {room.roomCode}
             </h3>
             <h4>
               <i>
                 (Anyone with this room code will be able to join your session)
               </i>
             </h4>
-            <div className='VotingRoomButton'>
-            <button onClick={enterVoting}>Enter Voting Room</button>
+            <div className="VotingRoomButton">
+              <button className="RoomButton" onClick={enterVoting}>Enter Voting Room</button>
             </div>
           </div>
-
           <ul className="MovieGridContainer">
-            <div className="SelectMovie">
-              <h2>Select Your Movie Picks:</h2>
-            </div>
+          <h3 className="SelectMovie"><i>Select Movies You're Interested In Seeing:</i></h3>
             <div className="MoviesContainer">
               {movies.map((movie, index) => (
                 <MovieCard
@@ -63,9 +59,8 @@ export default function RoomPage({ user, room, movies, setRoom }) {
               ))}
             </div>
           </ul>
-        </div>
-      </div
-      <button onClick={enterVoting}>Enter Voting Room</button>
+          </div>
+      </div>
     </div>
   )
 }

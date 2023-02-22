@@ -1,5 +1,5 @@
 .EnterRoom {
-  margin: 6vmin 0vmin -6vmin 0vmin;
+  margin: 9.5vmin 0vmin -6vmin 0vmin;
   padding: 0vmin 5vmin 0vmin 5vmin;
   border-radius: 1vmin;
   display: flex;
@@ -12,7 +12,7 @@
 .RoomCodeCardContainer {
   padding: 4vmin;
   background-color: #e6efd7;
-  border: 0.5vmin solid var(--lightgreen);
+  border: 0.5vmin solid var(--olive);
   border-radius: 1vmin;
 }
 
@@ -49,18 +49,12 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .RoomPageContainer {
-    margin: 11.5vmin 0vmin 0vmin -7vmin;
-  }
   .RoomCodeCardContainer {
     margin-left: 1vmin;
   }
 }
 
 @media screen and (max-width: 1050px) {
-  .RoomPageContainer {
-    margin: 0vmin 0.5vmin 0vmin 5vmin;
-  }
   .RoomCodeCardContainer {
     margin-left: 0vmin;
   }

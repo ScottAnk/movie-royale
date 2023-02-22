@@ -66,7 +66,7 @@ export default function App() {
         </>
       ) : (
         <>
-          <div className="BodyContainer">
+          <div className="SectionContainer">
             <AuthPage setUser={setUser} />
             <EnterRoom user={user} setUser={setUser} setRoom={setRoom} />
           </div>

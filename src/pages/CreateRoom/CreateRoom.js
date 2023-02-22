@@ -17,9 +17,9 @@ export default function CreateRoom({ room, setRoom }) {
   return (
     <div className="CreateRoomContainer">
       <div className="CreateRoomCardContainer">
-        <h2 className="PageTitle">
+        <h3 className="PageTitle" style={{marginBottom: "2vmin"}}>
           <u>Let's Get Watchin'</u>
-        </h2>
+        </h3>
         <button onClick={createRoom}>Create Room</button>
       </div>
     </div>
