@@ -21,7 +21,7 @@ app.use(logger('dev'))
 // and put that data on req.body
 app.use(express.json())
 app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:3000` }))
-// app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 // app.use(express.static(path.join(__dirname, 'build')))
 
 // middleware that adds the user object from a JWT to req.user
