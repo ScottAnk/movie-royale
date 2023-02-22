@@ -24,7 +24,7 @@ export default function RoomPage({ room, movies, setRoom }) {
         </h2>
         <div className="SectionContainer">
           <div className="CodeCard">
-            <h3><i>Room Code:</i></h3>
+            <h3 style={{marginTop: "2vmin", marginBottom: "-2vmin"}}><i>Room Code:</i></h3>
             <h3
               style={{
                 color: '#615954',
@@ -47,7 +47,8 @@ export default function RoomPage({ room, movies, setRoom }) {
             </div>
           </div>
           <ul className="MovieGridContainer">
-          <h3 className="SelectMovie"><i>Select Movies You're Interested In Seeing:</i></h3>
+          <h4 className="SelectMovie"><i>Select Movies Below:</i></h4>
+          <h5 style={{marginTop: "-2vmin"}}><i>(scroll down to see full list of movies)</i></h5>
             <div className="MoviesContainer">
               {movies.map((movie, index) => (
                 <MovieCard
