@@ -1,10 +1,6 @@
 # H1 Title: Movie Royale
 
 ## H2 Screenshots:
-
-## H2 Technologies Used: Javascript, CSS, Node, Express, Axios, BCrypt, Dotenv, Jsonwebtoken, Mongoose, Morgan, React, React-Router-dom, Serve-favicon, Socket.io
-
-## H2 Getting Started: 
 ![Login Screen](./imgs/P3_Login.png)
 
 ![Login Screen With Room Code](./imgs//P3_Login_And_RoomCode.png)
@@ -14,6 +10,10 @@
 ![Movie Selection](./imgs//P3_Movie_Selection.png)
 
 ![Voting](./imgs/P3_Voting_Room.png)
+
+## H2 Technologies Used: Javascript, CSS, Node, Express, Axios, BCrypt, Dotenv, Jsonwebtoken, Mongoose, Morgan, React, React-Router-dom, Serve-favicon, Socket.io
+
+## H2 Getting Started: 
 
 ## H2 Link: https://movie-royale-client.onrender.com
 
