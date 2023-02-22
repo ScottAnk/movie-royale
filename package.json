@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://movie-royale.onrender.com"
+  "proxy": "https://movie-royale.onrender.com:10000"
 }
