@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './VotingRoom.css'
 import { useNavigate } from 'react-router-dom'
 import RecommendedMovie from '../../components/RecommendedMovie/RecommendedMovie'
 
 export default function VotingRoom({ room, setRoom }) {
-  const [winner, SetWinner] = useState({})
+  const [winner, setWinner] = useState({ imdbid: '' })
 
   const navigate = useNavigate()
 
@@ -13,16 +13,17 @@ export default function VotingRoom({ room, setRoom }) {
     navigate('/room')
   }
 
-  function getWinningMovie() {
-    const highestNumber = 0
-
-    room.recommendedMovies.forEach((movie) => {
-      if (movie.usersVotingYes.length > highestNumber) {
-        SetWinner(movie)
-      }
-    })
-    console.log(winner)
-  }
+  useEffect(
+    function () {
+      // make a copy of recommendedMovies sorted by number of votes. Ties will be determined by the original order of recommended movies
+      const moviesByScore = [...room.recommendedMovies].sort(
+        (a, b) => b.usersVotingYes.length - a.usersVotingYes.length
+      )
+      // winner is the first movie after sorting
+      setWinner(moviesByScore[0])
+    },
+    [room]
+  )
 
   return (
     <div className="RoomPageContainer">
@@ -52,7 +53,6 @@ export default function VotingRoom({ room, setRoom }) {
                     movie={movie}
                     key={index}
                     winner={winner}
-                    getWinningMovie={getWinningMovie}
                   />
                 ))}
               </div>

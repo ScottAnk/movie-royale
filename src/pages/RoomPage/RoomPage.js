@@ -3,7 +3,7 @@ import MovieCard from '../../components/MovieCard/MovieCard'
 import * as roomsServices from '../../utilities/rooms-services'
 import './RoomPage.css'
 
-export default function RoomPage({ user, room, movies, setRoom }) {
+export default function RoomPage({ room, movies, setRoom }) {
   const movieNames = room.recommendedMovies.map((movie) => movie.title)
   const navigate = useNavigate()
 
