@@ -33,7 +33,7 @@ export default function LoginForm({ setUser, handleShowSignUp, showSignUp }) {
   }
 
   return (
-    <div>
+    <div style={{marginTop: "5vmin"}}>
       <div className="CardContainer">
         <h2 className="AuthHeader">
           <u>Let's Get'cha Logged In</u>

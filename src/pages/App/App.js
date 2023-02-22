@@ -81,10 +81,14 @@ export default function App() {
         </>
       ) : (
         <>
-          <div className="SectionContainer">
-            <AuthPage setUser={setUser} />
-            <EnterRoom user={user} setUser={setUser} setRoom={handleSetRoom} />
-          </div>
+            <div className="SectionContainer">
+              <AuthPage setUser={setUser} />
+              <EnterRoom
+                user={user}
+                setUser={setUser}
+                setRoom={handleSetRoom}
+              />
+            </div>
         </>
       )}
     </main>
