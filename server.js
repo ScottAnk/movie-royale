@@ -4,6 +4,7 @@ const favicon = require('serve-favicon')
 const logger = require('morgan')
 const http = require('http')
 const { socketConnection } = require('./lib/socketIo')
+const cors = require('cors')
 
 // load environment variables and open database connection
 require('dotenv').config()
