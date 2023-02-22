@@ -43,6 +43,7 @@ export default function RoomPage({ room, movies, setRoom }) {
             </h5>
             <div className="VotingRoomButton">
               <button className="RoomButton" onClick={enterVoting}>Enter Voting Room</button>
+
             </div>
           </div>
           <ul className="MovieGridContainer">
@@ -61,6 +62,7 @@ export default function RoomPage({ room, movies, setRoom }) {
           </ul>
           </div>
       </div>
+
     </div>
   )
 }

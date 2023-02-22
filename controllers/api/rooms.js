@@ -1,5 +1,5 @@
 const Room = require('../../models/room')
-// const logOut = require('../../src/utilities/users-service')
+const { messageSockets } = require('../../lib/socketIo')
 
 // generate a new room in database and send it back as a response
 async function createRoom(req, res, next) {
@@ -66,6 +66,9 @@ async function vote(req, res, next) {
     movie[arrayName].push(req.user._id)
     await room.save()
 
+    // push an update to all sockets in the room
+    messageSockets(req.params.roomCode, 'room update', room)
+
     res.json(room)
   } catch (error) {
     next(error)
@@ -101,6 +104,9 @@ async function recommend(req, res, next) {
 
       room.recommendedMovies.push(movie)
       await room.save()
+
+      // push an update to all sockets in the room
+      messageSockets(req.params.roomCode, 'room update', room)
 
       res.json(room)
     }
