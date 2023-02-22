@@ -77,7 +77,7 @@ export default function EnterRoom({ setUser, setRoom }) {
                     <input
                       className="RoomCodeInput"
                       type="text"
-                      maxlength="6"
+                      maxLength="6"
                       value={roomCode}
                       onChange={handleChange}
                       placeholder="Enter 6-Digit Code Here"
