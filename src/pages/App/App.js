@@ -55,12 +55,7 @@ export default function App() {
             <Route
               path="/room"
               element={
-                <RoomPage
-                  user={user}
-                  room={room}
-                  movies={movies}
-                  setRoom={handleSetRoom}
-                />
+                <RoomPage room={room} movies={movies} setRoom={handleSetRoom} />
               }
             />
             <Route
