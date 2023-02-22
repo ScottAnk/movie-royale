@@ -11,14 +11,14 @@
 }
 
 .CreateRoomCardContainer {
-  padding: 10vmin 5vmin 3vmin 5vmin;
+  padding: 4vmin 5vmin 3vmin 5vmin;
   background-color: var(--lightblue);
-  border: 0.5vmin solid var(--lightgreen);
+  border: 0.5vmin solid var(--olive);
   border-radius: 1vmin;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .CreateRoomCardContainer {
-    padding: -5vmin 10vmin 5vmin 10vmin;
+    margin-top: -10vmin;
   }
 }

@@ -38,15 +38,19 @@ export default function EnterRoom({ setUser, setRoom }) {
   return (
     <div className="EnterRoom">
       <div className="RoomCodeCardContainer">
-        <h2 className="AuthHeader">
+        <h2 className="AuthHeader" style={{ marginBottom: '-2vmin' }}>
           <u>Let's Get Watchin'</u>
         </h2>
-        <h4 style={{ marginBottom: '-2vmin' }}>
+        <h3 style={{ marginBottom: '-1vmin' }}>
           <i>Have a room code?</i>
-        </h4>
-        <h4 style={{ marginBottom: '5vmin' }}>
-          You can join your party using this form here:
-        </h4>
+        </h3>
+        <h5 style={{ marginBottom: '5vmin', color: '#839159' }}>
+          <i>
+            {showRoomCodeForm
+              ? 'You can join your party using this form here:'
+              : 'Click the button below to input your code:'}
+          </i>
+        </h5>
         <button
           onClick={() => setShowRoomCodeForm(!showRoomCodeForm)}
           style={{
@@ -63,22 +67,28 @@ export default function EnterRoom({ setUser, setRoom }) {
               <form
                 autoComplete="off"
                 onSubmit={handleSubmit}
-                className="EnterRoomForm"
+                className="RoomCodeForm"
               >
-                <label>Enter Room Code: </label>
-                <br />
-                <input
-                  className="RoomCodeInput"
-                  type="text"
-                  value={roomCode}
-                  onChange={handleChange}
-                  placeholder="Enter 6-Digit Code Here"
-                  name="room"
-                  required
-                />
-                <button type="submit" className="RoomCodeSubmit">
-                  Join Existing Room
-                </button>
+                <div>
+                  <div className="RoomCodeText">
+                    <label style={{ marginTop: '-0.5vmin' }}>
+                      Enter Room Code:{' '}
+                    </label>
+                    <input
+                      className="RoomCodeInput"
+                      type="text"
+                      maxlength="6"
+                      value={roomCode}
+                      onChange={handleChange}
+                      placeholder="Enter 6-Digit Code Here"
+                      name="room"
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="RoomCodeSubmit">
+                    Join Existing Room
+                  </button>
+                </div>
               </form>
             </div>
             <p className="error-message">{error}</p>

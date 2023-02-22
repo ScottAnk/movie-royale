@@ -1,3 +1,7 @@
+.AppTitle {
+  margin-top: 10vmin;
+}
+
 .AuthHeader {
   font-size: 5vmin;
 }
@@ -11,7 +15,10 @@
   margin: 2vmin 22vmin 0vmin 22vmin;
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1200px) {
+  .AppTitle {
+    text-align: center;
+  }
   .AuthHeader {
     font-size: 4vmin;
   }

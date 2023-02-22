@@ -3,7 +3,7 @@ import MovieCard from '../../components/MovieCard/MovieCard'
 import * as roomsServices from '../../utilities/rooms-services'
 import './RoomPage.css'
 
-export default function RoomPage({ user, room, movies, setRoom }) {
+export default function RoomPage({ room, movies, setRoom }) {
   const movieNames = room.recommendedMovies.map((movie) => movie.title)
   const navigate = useNavigate()
 
@@ -24,32 +24,30 @@ export default function RoomPage({ user, room, movies, setRoom }) {
         </h2>
         <div className="SectionContainer">
           <div className="CodeCard">
-            <h2>Room Code:</h2>
-            <h2
+            <h3><i>Room Code:</i></h3>
+            <h3
               style={{
-                backgroundColor: 'rgb(178, 194, 211)',
-                margin: '0vmin 65vmin 0vmin 65vmin',
-                padding: '1vmin',
+                color: '#615954',
+                backgroundColor: '#e6efd7',
+                padding: '1.5vmin',
                 borderStyle: 'solid',
                 borderRadius: '1vmin',
               }}
             >
-              {room.roomCode}{' '}
-            </h2>
-            <h4>
+              {room.roomCode}
+            </h3>
+            <h5>
               <i>
                 (Anyone with this room code will be able to join your session)
               </i>
-            </h4>
+            </h5>
             <div className="VotingRoomButton">
-              <button onClick={enterVoting}>Enter Voting Room</button>
+              <button className="RoomButton" onClick={enterVoting}>Enter Voting Room</button>
+
             </div>
           </div>
-
           <ul className="MovieGridContainer">
-            <div className="SelectMovie">
-              <h2>Select Your Picks:</h2>
-            </div>
+          <h3 className="SelectMovie"><i>Select Movies You're Interested In Seeing:</i></h3>
             <div className="MoviesContainer">
               {movies.map((movie, index) => (
                 <MovieCard
@@ -62,9 +60,9 @@ export default function RoomPage({ user, room, movies, setRoom }) {
               ))}
             </div>
           </ul>
-        </div>
+          </div>
       </div>
-      <button onClick={enterVoting}>Enter Voting Room</button>
+
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import * as roomsServices from '../../utilities/rooms-services'
 
-export default function RecommendedMovie({ movie, room, setRoom, winner, getWinningMovie }) {
+export default function RecommendedMovie({ movie, room, setRoom, winner }) {
   const [wiggle, setWiggle] = useState(false)
   const [flop, setFlop] = useState(false)
 
@@ -13,16 +13,10 @@ export default function RecommendedMovie({ movie, room, setRoom, winner, getWinn
     }
     const updatedRoom = await roomsServices.addNewVote(room.roomCode, body)
     setRoom(updatedRoom)
-    // console.log(room)
-    // console.log(event.target.name)
-    console.log(body)
-    console.log(updatedRoom)
-    getWinningMovie()
 
-    if (event.target.name === "yes") {
+    if (event.target.name === 'yes') {
       setWiggle(!wiggle)
-    }
-    else if (event.target.name === "no") {
+    } else if (event.target.name === 'no') {
       setFlop(!flop)
     }
   }
@@ -31,34 +25,50 @@ export default function RecommendedMovie({ movie, room, setRoom, winner, getWinn
 
   return (
     <div className="MovieCard">
-        <h4>
+        <h5>
           <i>"{movie.title}"</i>
-        </h4>
-      <li>
-        <img src={`${movie.image}`} className="MoviePoster"/>
+        </h5>
+      <li style={{marginBottom: "2vmin"}}>
+        <img src={`${movie.image}`} className="MoviePoster" />
       </li>
       <div>
-        {/* <button value={`${movie.usersVotingYes.length} Upvotes`}></button> */}
         <div className="VotingFooter">
-          <h3><u>Number of Votes</u>:</h3>
+          <h4 style={{marginTop: "1vmin", marginBottom: "0vmin"}}>
+            <u>Number of Votes</u>:
+          </h4>
           <div className="VotingScore">
-            <h4 style={{
-              marginLeft: "1vmin",
-              marginRight: "2vmin",
-              color: winner.title === movie.title ? "gold" : "green"
-              }}><span className={wiggle ? "WiggleNumber" : ""}>{`+ ${movie.usersVotingYes.length}`}</span> Upvotes</h4>
-            <h4 style={{
-              marginRight: "2vmin",
-              color: "darkred"
-            }}><span className={flop ? "FlopNumber" : ""}>{`- ${movie.usersVotingNo.length}`}</span> Downvotes</h4>
+            <h5
+              style={{
+                color: winner.imdbid === movie.imdbid ? 'gold' : 'green',
+              }}
+            >
+              <span
+                className={wiggle ? 'WiggleNumber' : ''}
+              >{`+ ${movie.usersVotingYes.length}`}</span>{' '}
+              Upvotes
+            </h5>
+            <h5
+              style={{
+                color: 'darkred',
+              }}
+            >
+              <span
+                className={flop ? 'FlopNumber' : ''}
+              >{`- ${movie.usersVotingNo.length}`}</span>{' '}
+              Downvotes
+            </h5>
           </div>
           <div className="VotingButtons">
-          <button name="yes" onClick={handleVote} style={{marginRight: "1.5vmin"}}>
-            Upvote
-          </button>
-          <button name="no" onClick={handleVote}>
-            Downvote
-          </button>
+            <button
+              name="yes"
+              onClick={handleVote}
+              style={{ marginRight: '1.5vmin' }}
+            >
+              Upvote
+            </button>
+            <button name="no" onClick={handleVote}>
+              Downvote
+            </button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 .EnterRoom {
-  margin: 6vmin 0vmin -6vmin 0vmin;
+  margin: 15vmin 0vmin -6vmin 0vmin;
   padding: 0vmin 5vmin 0vmin 5vmin;
   border-radius: 1vmin;
   display: flex;
@@ -10,30 +10,33 @@
 }
 
 .RoomCodeCardContainer {
-  padding: 4vmin;
+  padding: 0vmin 4vmin 3vmin 4vmin;
   background-color: #e6efd7;
-  border: 0.5vmin solid var(--lightgreen);
+  border: 0.5vmin solid var(--olive);
   border-radius: 1vmin;
 }
 
 .RoomCodeFormContainer {
-  margin: 0vmin -25vmin 0vmin -25vmin;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.EnterRoomForm {
-  display: grid;
-  grid-template-rows: 0.75fr 0.5fr 0.75fr;
-  grid-template-columns: 1fr;
-  column-gap: 0vmin;
-  margin: 0vmin -5vmin 0vmin -5vmin;
-}
-.RoomCodeInput {
-  margin: -0.5vmin 40vmin -0.5vmin 40vmin;
+.RoomCodeForm {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.RoomCodeSubmit {
-  margin: 2vmin 40vmin 0vmin 40vmin;
-  padding: 2vmin 1vmin 2vmin 1vmin;
+.RoomCodeText {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 2vmin;
+  margin-bottom: 3vmin;
 }
 
 .RoomCodeInput::placeholder {
@@ -42,25 +45,22 @@
 
 @media screen and (max-width: 1450px) {
   .RoomCodeCardContainer {
-    margin: -4vmin 0vmin 0vmin -6vmin;
-    margin-left: 1vmin;
-    padding: 4vmin 4vmin 3vmin 4vmin;
+    margin: -3vmin 0vmin 0vmin -10vmin;
+    padding-bottom: 0vmin;
+  }
+  .RoomCodeInput::placeholder {
+    font-size: 1.75vmin;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .RoomPageContainer {
-    margin: 11.5vmin 0vmin 0vmin -7vmin;
-  }
   .RoomCodeCardContainer {
+    margin-top: -12vmin;
     margin-left: 1vmin;
   }
 }
 
 @media screen and (max-width: 1050px) {
-  .RoomPageContainer {
-    margin: 0vmin 0.5vmin 0vmin 5vmin;
-  }
   .RoomCodeCardContainer {
     margin-left: 0vmin;
   }
