@@ -1,7 +1,7 @@
 // api requests for rooms
 import sendRequest from './send-request'
 
-const BASE_URL = 'https://movie-royale.onrender.com/api/rooms'
+const BASE_URL = 'https://movie-royale-backup-server.onrender.com/api/rooms'
 
 export function getRoom() {
   return sendRequest(BASE_URL, 'POST')
