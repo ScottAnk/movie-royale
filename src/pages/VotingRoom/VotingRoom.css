@@ -28,7 +28,7 @@
   border-style: solid;
   border-radius: 1vmin;
   border-color: aliceblue;
-  padding: 2vmin;
+  padding: 1.5vmin 2vmin 1vmin 2vmin;
   overflow-y: scroll;
 }
 

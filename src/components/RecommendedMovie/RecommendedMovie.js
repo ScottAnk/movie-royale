@@ -62,7 +62,8 @@ export default function RecommendedMovie({ movie, room, setRoom, winner }) {
             <button
               name="yes"
               onClick={handleVote}
-              style={{ marginRight: '1.5vmin' }}
+              style={{ 
+                marginRight: '1.5vmin'}}
             >
               Upvote
             </button>

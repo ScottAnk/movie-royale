@@ -236,7 +236,7 @@ button[type='submit'] {
   grid-row-gap: 5vmin;
   border-radius: 1.5vmin;
   border-width: 1vmin;
-  height: 75vmin;
+  height: 70vmin;
   width: fit-content;
 }
 
@@ -245,13 +245,14 @@ button[type='submit'] {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0vmin;
-  grid-row-gap: 5vmin;
+  grid-row-gap: 3vmin;
   border-style: solid;
   border-radius: 1vmin;
   border-color: aliceblue;
-  padding: 3vmin 1vmin 3vmin 1vmin;
-  width: 125vmin;
+  padding: 3vmin 5vmin 3vmin 5vmin;
+  max-width: 100vmin;
   overflow-y: scroll;
+  margin-top: -7vmin;
 }
 
 .MovieCard {
@@ -259,15 +260,15 @@ button[type='submit'] {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 1fr;
-  margin: 0vmin 2vmin 2vmin 2vmin;
+  margin: 0vmin 1vmin 2vmin 1vmin;
   border-radius: 2vmin;
   border-width: 0.5vmin;
   border-style: solid;
 }
 
 .MoviePoster {
-  height: 30vmin;
-  width: 20vmin;
+  height: 25vmin;
+  width: 18vmin;
   border-radius: 1.5vmin;
   border-width: 0.5vmin;
   border-style: solid;
@@ -309,7 +310,7 @@ button[type='submit'] {
     font-size: 4vmin;
   }
   h4 {
-    font-size: 2vmin;
+    font-size: 3vmin;
   }
   form {
     grid-template-columns: 0.5fr 0.5fr;
