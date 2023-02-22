@@ -13,7 +13,7 @@ import * as moviesAPI from '../../utilities/movies-api'
 import { findRoom } from '../../utilities/rooms-services'
 import './App.css'
 
-const socket = io()
+const socket = io('https://movie-royale-backup.onrender.com')
 
 export default function App() {
   const [user, setUser] = useState(getUser())
