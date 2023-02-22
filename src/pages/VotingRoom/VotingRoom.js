@@ -34,7 +34,7 @@ export default function VotingRoom({ room, setRoom }) {
             {/* if no movies, display the first header, else display the second */}
             {room.recommendedMovies.length === 0 ? (
               <div>
-                <h3 className="CardContainer">
+                <h3 className="CardContainer" style={{paddingTop: "2vmin"}}>
                   There are no recommended movies here yet.
                 </h3>
               </div>

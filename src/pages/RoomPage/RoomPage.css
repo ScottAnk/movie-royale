@@ -17,7 +17,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 10vmin;
+  column-gap: 8vmin;
 }
 
 .CodeCard {
@@ -32,19 +32,22 @@
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 1828px) {
+@media screen and (max-width: 1925px) {
   .CodeCard {
     margin-top: 5vmin;
-    margin-bottom: 5vmin;
   }
   .SelectMovie {
-    margin-top: 0vmin;
+    margin-top: 5vmin;
   }
+}
+
+@media screen and (max-width: 1700px) {
+
 }
 
 @media screen and (max-width: 1200px) {
   .MoviesSection {
-    flex-wrap: column wrap;
+    flex-wrap: row wrap;
     justify-content: center;
     align-items: center;
   }
