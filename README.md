@@ -1,5 +1,7 @@
 # H1 Title: Movie Royale
 
+# H1 Our App: Movie Royale eliminates the constant squalling and headaches that come from a movie night. Rather than scrolling threw Netflix or another stream service, get ahead of the game by using Movie royale to quickly and effectively recommend and vote on your favorite movie! After creating an account, simply send the room code to your friends. Once in the room, everyone will be able to persue, recommend, and vote on what to watch as a group. This app can be accessed from anyone with wifi and a computer, so you can figure out your watch party plans before the pizza gets cold.
+
 ## H2 Screenshots:
 ![Login Screen](./imgs/P3_Login.png)
 
