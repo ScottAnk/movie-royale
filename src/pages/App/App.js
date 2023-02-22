@@ -23,7 +23,6 @@ export default function App() {
   // set up socket events
   useEffect(function () {
     socket.on('room update', function (room) {
-      console.log('recieved room update')
       localStorage.setItem('room', JSON.stringify(room))
       setRoom(room)
     })
@@ -41,7 +40,6 @@ export default function App() {
   useEffect(function () {
     async function getMovies() {
       const newMovies = await moviesAPI.getMovies()
-      console.log(newMovies)
       setMovies(newMovies)
     }
     getMovies()

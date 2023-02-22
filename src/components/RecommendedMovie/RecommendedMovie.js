@@ -14,9 +14,6 @@ export default function RecommendedMovie({ movie, room, setRoom, winner }) {
     const updatedRoom = await roomsServices.addNewVote(room.roomCode, body)
     setRoom(updatedRoom)
 
-    console.log(body)
-    console.log(updatedRoom)
-
     if (event.target.name === 'yes') {
       setWiggle(!wiggle)
     } else if (event.target.name === 'no') {
@@ -35,7 +32,6 @@ export default function RecommendedMovie({ movie, room, setRoom, winner }) {
         <img src={`${movie.image}`} className="MoviePoster" />
       </li>
       <div>
-        {/* <button value={`${movie.usersVotingYes.length} Upvotes`}></button> */}
         <div className="VotingFooter">
           <h3>
             <u>Number of Votes</u>:

@@ -13,17 +13,17 @@ export default function VotingRoom({ room, setRoom }) {
     navigate('/room')
   }
 
-  useEffect(getWinningMovie, [room])
-  function getWinningMovie() {
-    // make a copy of recommendedMovies sorted by number of votes. Ties will be determined by the original order of recommended movies
-    const moviesByScore = [...room.recommendedMovies].sort(
-      (a, b) => b.usersVotingYes.length - a.usersVotingYes.length
-    )
-    console.log(moviesByScore.map((mov) => mov.title))
-    setWinner(moviesByScore[0])
-
-    console.log(winner)
-  }
+  useEffect(
+    function () {
+      // make a copy of recommendedMovies sorted by number of votes. Ties will be determined by the original order of recommended movies
+      const moviesByScore = [...room.recommendedMovies].sort(
+        (a, b) => b.usersVotingYes.length - a.usersVotingYes.length
+      )
+      // winner is the first movie after sorting
+      setWinner(moviesByScore[0])
+    },
+    [room]
+  )
 
   return (
     <div className="RoomPageContainer">
