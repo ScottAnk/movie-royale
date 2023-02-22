@@ -95,14 +95,14 @@ export default function SignUpForm({ setUser, showSignUp, handleShowSignUp }) {
           <div className="SectionBreak"></div>
         </div>
         <div className="LoginOrSignUp">
-          <h3
+          <h4
             style={{
               marginTop: '-10px',
               marginBottom: '5px',
             }}
           >
             Already have an account?
-          </h3>
+          </h4>
           <button onClick={handleShowSignUp}>
             {showSignUp ? 'Login To Your Account' : 'Create New Account'}
           </button>

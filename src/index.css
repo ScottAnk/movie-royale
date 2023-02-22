@@ -84,15 +84,15 @@ h3 {
 }
 
 h4 {
-  font-family: 'Gloock', serif;
-  font-size: 2vmin;
-  color: var(--darkbrown)
-}
-
-h5 {
   color: rgb(72, 93, 72);
   font-family: 'Gloock', serif;
   font-size: 3vmin;
+}
+
+h5 {
+  color: var(--darkbrown);
+  font-family: 'Gloock', serif;
+  font-size: 2vmin;
 }
 
 ul {
@@ -149,8 +149,6 @@ label {
 
 input {
   font-family: 'Asul', sans-serif;
-  margin-left: -5vmin;
-  margin-right: 7vmin;
   padding: 1vmin;
   font-size: 2.5vmin;
   border: 0.1vmin solid var(--text-dark);
