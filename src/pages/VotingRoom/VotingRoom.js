@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import RecommendedMovie from '../../components/RecommendedMovie/RecommendedMovie'
 
 export default function VotingRoom({ room, setRoom }) {
+
   const [winner, setWinner] = useState({ imdbid: '' })
 
   const navigate = useNavigate()
@@ -12,6 +13,7 @@ export default function VotingRoom({ room, setRoom }) {
   function roomPage() {
     navigate('/room')
   }
+
 
   useEffect(
     function () {
@@ -28,23 +30,28 @@ export default function VotingRoom({ room, setRoom }) {
   return (
     <div className="RoomPageContainer">
       <div className="RoomCardContainer">
-        <div className="SectionContainer">
-          <div>
-            <button className="ReturnButton" onClick={roomPage}>
-              Return to Movies List
-            </button>
+        <div className="HeaderContainer">
+          <div className="HeaderContainer"
+          style={{marginTop: room.recommendedMovies.length === 0 ? "15vmin" : "0vmin"}}>
+            <h2 className="PageTitle">It's Votin' Time!</h2>
             {/* if no movies, display the first header, else display the second */}
             {room.recommendedMovies.length === 0 ? (
-              <h2> There are no movies yet </h2>
+              <div>
+                <h3 className="CardContainer" style={{paddingTop: "2vmin"}}>
+                  There are no recommended movies here yet.
+                </h3>
+              </div>
             ) : (
-              <h2 className="PageTitle">It's Votin' Time!</h2>
+              ''
+
             )}
           </div>
           {/* if no movies, don't display anything, else, go ahead and render everything */}
           {room.recommendedMovies.length === 0 ? (
             ''
           ) : (
-            <ul className="RecdMovieGrid">
+            <ul className="RecdMoviesGrid">
+
               <div className="RecdMoviesContainer">
                 {room.recommendedMovies.map((movie, index) => (
                   <RecommendedMovie
@@ -59,6 +66,9 @@ export default function VotingRoom({ room, setRoom }) {
             </ul>
           )}
         </div>
+        <button className="RoomButton" onClick={roomPage}>
+              Return to Movies List
+            </button>
       </div>
     </div>
   )

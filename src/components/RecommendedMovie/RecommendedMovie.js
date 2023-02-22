@@ -25,22 +25,20 @@ export default function RecommendedMovie({ movie, room, setRoom, winner }) {
 
   return (
     <div className="MovieCard">
-      <h4>
-        <i>"{movie.title}"</i>
-      </h4>
-      <li>
+        <h5>
+          <i>"{movie.title}"</i>
+        </h5>
+      <li style={{marginBottom: "2vmin"}}>
         <img src={`${movie.image}`} className="MoviePoster" />
       </li>
       <div>
         <div className="VotingFooter">
-          <h3>
+          <h4 style={{marginTop: "1vmin", marginBottom: "0vmin"}}>
             <u>Number of Votes</u>:
-          </h3>
+          </h4>
           <div className="VotingScore">
-            <h4
+            <h5
               style={{
-                marginLeft: '1vmin',
-                marginRight: '2vmin',
                 color: winner.imdbid === movie.imdbid ? 'gold' : 'green',
               }}
             >
@@ -48,10 +46,9 @@ export default function RecommendedMovie({ movie, room, setRoom, winner }) {
                 className={wiggle ? 'WiggleNumber' : ''}
               >{`+ ${movie.usersVotingYes.length}`}</span>{' '}
               Upvotes
-            </h4>
-            <h4
+            </h5>
+            <h5
               style={{
-                marginRight: '2vmin',
                 color: 'darkred',
               }}
             >
@@ -59,7 +56,7 @@ export default function RecommendedMovie({ movie, room, setRoom, winner }) {
                 className={flop ? 'FlopNumber' : ''}
               >{`- ${movie.usersVotingNo.length}`}</span>{' '}
               Downvotes
-            </h4>
+            </h5>
           </div>
           <div className="VotingButtons">
             <button

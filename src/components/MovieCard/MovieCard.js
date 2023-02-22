@@ -9,9 +9,9 @@ export default function MovieCard({ movie, room, setRoom, isRecommended }) {
 
   return (
     <div className="MovieCard">
-        <h4>
+        <h5>
           <i>"{movie.title}"</i>
-        </h4>
+        </h5>
       <li>
         <img src={`${movie.image}`} className={isRecommended ? 'RotatedMoviePoster' : 'MoviePoster'} />
       </li>

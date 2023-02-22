@@ -1,16 +1,16 @@
 /* Imported Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Gloock&family=Joti+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Gloock&family=Joti+One&display=swap');
 
 /* CUSTOM COLOR PALETTE */
 
 :root {
   --beige: #e3daba;
   --lightblue: #e6efd7;
-  --lightgreen: #dde5b6;
+  --lightgreen: #9fa96f;
   --olive: #8b956d;
   --lightbrown: #fce0bc;
-  --darkbrown: #d6b199;
+  --darkbrown: #4f433e;
   --orange: #edc6a8;
   --text-light: #e3c8b2;
   --text-dark: #615954;
@@ -51,12 +51,13 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow-y: hidden;
 }
 
 .CardContainer {
   padding: 2vmin 5vmin 3vmin 5vmin;
   background-color: var(--lightblue);
-  border: 0.5vmin solid var(--lightgreen);
+  border: 0.5vmin solid var(--olive);
   border-radius: 1vmin;
 }
 
@@ -65,27 +66,39 @@ body {
 h1 {
   font-family: 'Gloock', serif;
   font-size: 5vmin;
+  color: var(--text-dark);
+
 }
 
 h2 {
-  font-family: 'Gloock', serif;
   color: rgb(77, 63, 63);
+  font-family: 'Gloock', serif;
   font-size: 5vmin;
-  margin: 2vmin;
+  margin-bottom: 5vmin;
 }
 
 h3 {
-  font-family: 'Asul', sans-serif;
-  font-size: 3vmin;
+  color: rgb(72, 93, 72);
+  font-family: 'EB Garamond', serif;
+  font-size: 4.5vmin;
 }
 
 h4 {
+  color: rgb(72, 93, 72);
   font-family: 'Gloock', serif;
-  font-size: 2.5vmin;
+  font-size: 3vmin;
+}
+
+h5 {
+  color: var(--darkbrown);
+  font-family: 'Gloock', serif;
+  font-size: 2vmin;
 }
 
 ul {
   padding-inline-start: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 }
 
 li {
@@ -94,6 +107,9 @@ li {
 
 .PageTitle {
   font-size: 6vmin;
+  margin-block-start: 0vmin;
+  margin-block-end: 0vmin;
+
 }
 
 .BreakContainer {
@@ -112,10 +128,6 @@ li {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-#root {
-  height: 100%;
 }
 
 /* FORMS (FORM ELEMENTS, LABELS, INPUTS, BUTTONS) */
@@ -137,8 +149,6 @@ label {
 
 input {
   font-family: 'Asul', sans-serif;
-  margin-left: -5vmin;
-  margin-right: 7vmin;
   padding: 1vmin;
   font-size: 2.5vmin;
   border: 0.1vmin solid var(--text-dark);
@@ -167,7 +177,7 @@ button {
   margin: 1vmin 0vmin 1vmin 0vmin;
   padding: 2vmin 3vmin 2vmin 3vmin;
   color: white;
-  background-color: var(--olive);
+  background-color: var(--text-dark);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -176,6 +186,15 @@ button {
   border-radius: 1vmin;
   outline: none;
   cursor: pointer;
+  transition-duration: 0.2s
+}
+
+.RoomButton {
+  background-color: var(--olive)
+}
+
+.RoomButton:hover {
+  background-color: var(--lightgreen)
 }
 
 button.btn-sm {
@@ -188,10 +207,16 @@ button.btn-xs {
   padding: 0.5vmin 0.5vmin;
 }
 
+button:hover {
+  background-color: #8e8580;
+}
+
 button:disabled,
 form:invalid button[type='submit'] {
   cursor: not-allowed;
-  background-color: var(--olive);
+  background-color: var(--beige);
+  border: 0.1vmin solid var(--darkbrown);
+  color: var(--darkbrown)
 }
 
 button[type='submit'] {
@@ -202,16 +227,16 @@ button[type='submit'] {
 /* Movie Card Containers */
 
 .MovieGridContainer {
-  margin: 0vmin 0vmin 2vmin 0vmin;
+  margin-bottom: 2vmin;
   border-radius: 2vmin;
   display: grid;
-  grid-template-columns: repeat(0.5fr, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0vmin;
   grid-row-gap: 5vmin;
   border-radius: 1.5vmin;
   border-width: 1vmin;
-  height: 70vmin;
+  height: 75vmin;
   width: fit-content;
 }
 
@@ -225,8 +250,8 @@ button[type='submit'] {
   border-radius: 1vmin;
   border-color: aliceblue;
   padding: 3vmin 1vmin 3vmin 1vmin;
+  width: 125vmin;
   overflow-y: scroll;
-  width: 1000px;
 }
 
 .MovieCard {
@@ -246,23 +271,26 @@ button[type='submit'] {
   border-radius: 1.5vmin;
   border-width: 0.5vmin;
   border-style: solid;
-  border-color: rgb(178, 194, 211);
+  border-color: #a1b24b;
 }
 .SelectMovie {
   grid-area: 1 / 1 / 2 / 2;
-  margin-bottom: -5vmin;
+  margin-top: 10vmin;
+  margin-bottom: -2vmin;
+  font-weight: 900;
 }
 
 .RotatedMoviePoster {
   height: 30vmin;
   width: 20vmin;
   border-radius: 1.5vmin;
-  border-width: 0.5vmin;
+  border-width: 1vmin;
   border-style: solid;
-  border-color: rgb(253, 235, 67);
+  border-color: rgb(255, 232, 21);
 	-webkit-animation: rotate-scale-down 0.50s linear both;
 	        animation: rotate-scale-down 0.50s linear both;
 }
+
 
 @media screen and (max-width: 1450px) {
   .BodyContainer {
@@ -275,10 +303,13 @@ button[type='submit'] {
     padding: 0vmin 5vmin 3vmin 5vmin;
   }
   h2 {
-    font-size: 3vmin;
+    font-size: 5vmin;
   }
   h3 {
-    font-size: 2.5vmin;
+    font-size: 4vmin;
+  }
+  h4 {
+    font-size: 2vmin;
   }
   form {
     grid-template-columns: 0.5fr 0.5fr;
@@ -291,7 +322,7 @@ button[type='submit'] {
   }
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1200px) {
   .BodyContainer {
     text-align: center;
   }
