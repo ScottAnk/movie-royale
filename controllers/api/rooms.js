@@ -136,7 +136,7 @@ function makeRandomCode() {
   // TODO-SA it would be kinda tight to restrict output to prevent repeat characters
 
   // excluding 1, 2, 8, and 0 for reduced ambiguity
-  const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ345679'
+  const symbols = 'ABCDEFGHIJKLMNPQRSTUVWXYZ345679'
 
   // pick 6 character from symbols
   let randomCode = ''
