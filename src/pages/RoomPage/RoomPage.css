@@ -1,6 +1,6 @@
 .RoomPageContainer {
   display: flex;
-  flex-flow: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -17,7 +17,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 8vmin;
+  column-gap: 10vmin;
 }
 
 .CodeCard {
@@ -32,6 +32,10 @@
   overflow-x: hidden;
 }
 
+.VotingRoomButton {
+  margin-bottom: 1.5vmin;
+}
+
 @media screen and (max-width: 1925px) {
   .CodeCard {
     margin-top: 5vmin;
@@ -39,10 +43,6 @@
   .SelectMovie {
     margin-top: 5vmin;
   }
-}
-
-@media screen and (max-width: 1700px) {
-
 }
 
 @media screen and (max-width: 1200px) {
