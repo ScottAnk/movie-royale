@@ -14,10 +14,11 @@ export default function CreateRoom({ room, setRoom }) {
     navigate('/room')
   }
 
+  // probably should use something like this to scroll after login https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition
   return (
     <div className="CreateRoomContainer">
       <div className="CreateRoomCardContainer">
-        <h3 className="PageTitle" style={{marginBottom: "2vmin"}}>
+        <h3 className="PageTitle" style={{ marginBottom: '2vmin' }}>
           <u>Let's Get Watchin'</u>
         </h3>
         <button onClick={createRoom}>Create Room</button>

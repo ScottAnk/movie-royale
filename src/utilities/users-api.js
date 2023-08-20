@@ -1,7 +1,11 @@
 // API modules are where the code lives to communicate
 // with the server via AJAX
 import sendRequest from './send-request'
-const BASE_URL = 'https://movie-royale.onrender.com/api/users'
+const BASE_URL_PREFIX =
+  process.env.NODE_ENV === 'production'
+    ? process.env.REACT_APP_DEPLOYMENT_BACKEND
+    : process.env.REACT_APP_DEVELOPMENT_BACKEND
+const BASE_URL = BASE_URL_PREFIX + '/api/users'
 
 // sign up main user
 export function signUp(userData) {

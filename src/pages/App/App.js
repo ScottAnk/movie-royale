@@ -13,7 +13,11 @@ import * as moviesAPI from '../../utilities/movies-api'
 import { findRoom } from '../../utilities/rooms-services'
 import './App.css'
 
-const socket = io('https://movie-royale.onrender.com/')
+const SERVER_URL =
+  process.env.NODE_ENV === 'production'
+    ? process.env.REACT_APP_DEPLOYMENT_BACKEND
+    : process.env.REACT_APP_DEVELOPMENT_BACKEND
+const socket = io(SERVER_URL)
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -81,14 +85,10 @@ export default function App() {
         </>
       ) : (
         <>
-            <div className="SectionContainer">
-              <AuthPage setUser={setUser} />
-              <EnterRoom
-                user={user}
-                setUser={setUser}
-                setRoom={handleSetRoom}
-              />
-            </div>
+          <div className="SectionContainer">
+            <AuthPage setUser={setUser} />
+            <EnterRoom user={user} setUser={setUser} setRoom={handleSetRoom} />
+          </div>
         </>
       )}
     </main>
