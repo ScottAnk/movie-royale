@@ -19,10 +19,6 @@ const recommendedMovieSchema = new Schema({
     type: String,
     required: true,
   },
-  trailer: {
-    type: String,
-    required: true,
-  },
   genre: {
     type: [String],
     required: true,

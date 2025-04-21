@@ -16,7 +16,7 @@ async function createRoom(req, res, next) {
 }
 
 // find a room based on roomCode and return it to client
-async function joinRoom(req, res) {
+async function joinRoom(req, res, next) {
   try {
     const room = await Room.findOne({ roomCode: req.params.roomCode })
     if (!room) throw new Error('room not found')
@@ -102,6 +102,7 @@ async function recommend(req, res, next) {
         usersVotingYes: [req.user._id],
       }
 
+      console.log('reccomending movie')
       room.recommendedMovies.push(movie)
       await room.save()
 
